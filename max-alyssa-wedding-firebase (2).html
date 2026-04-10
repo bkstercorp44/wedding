@@ -1,0 +1,2462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💍 Max &amp; Alyssa — May 1, 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange: #F56600;
+  --orange-dark: #C44F00;
+  --orange-light: #FFF3EB;
+  --orange-mid: #FFD0AA;
+  --purple: #522D80;
+  --purple-dark: #3A1F5C;
+  --purple-light: #EEE8F5;
+  --purple-mid: #B89DD4;
+  --cream: #FDFBF7;
+  --gold: #C9A84C;
+  --gold-light: #F5EDD4;
+  --white: #FFFFFF;
+  --text: #2D1B5E;
+  --text-light: #7B6FA0;
+  --border: #E5DBF0;
+  --shadow: rgba(82,45,128,0.12);
+  --success: #2E7D32;
+  --success-bg: #E8F5E9;
+  --warning: #E65100;
+  --warning-bg: #FFF3E0;
+  --danger: #C62828;
+  --danger-bg: #FFEBEE;
+  --neutral-bg: #ECEFF1;
+  --neutral: #546E7A;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+.site-header{
+  background:linear-gradient(150deg,var(--purple-dark) 0%,var(--purple) 55%,#6B3FA0 100%);
+  color:#fff;text-align:center;padding:32px 20px 24px;position:relative;overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 20% 50%,rgba(245,102,0,.15) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 30%,rgba(201,168,76,.12) 0%,transparent 55%);
+  pointer-events:none;
+}
+.header-flowers{font-size:1.4em;letter-spacing:10px;color:var(--orange);opacity:.9;position:relative;margin-bottom:6px;}
+.header-names{
+  font-family:'Playfair Display',serif;font-style:italic;font-size:3.6em;font-weight:400;
+  color:var(--gold);text-shadow:0 2px 12px rgba(0,0,0,.35);letter-spacing:2px;position:relative;
+}
+.header-amp{color:var(--orange);font-size:.85em;}
+.header-sub{
+  font-size:.95em;font-weight:300;letter-spacing:6px;text-transform:uppercase;
+  color:rgba(255,255,255,.8);margin-top:8px;position:relative;
+}
+.header-venue{font-size:.8em;color:rgba(255,255,255,.6);margin-top:4px;letter-spacing:2px;position:relative;}
+
+/* Countdown */
+.countdown{display:flex;justify-content:center;gap:14px;margin-top:22px;flex-wrap:wrap;position:relative;}
+.cd-unit{
+  background:rgba(255,255,255,.1);border:1px solid rgba(245,102,0,.45);
+  border-radius:12px;padding:12px 18px;min-width:74px;text-align:center;
+  backdrop-filter:blur(4px);
+}
+.cd-num{
+  font-family:'Playfair Display',serif;font-size:2.1em;font-weight:700;
+  color:var(--orange);line-height:1;display:block;
+}
+.cd-lbl{font-size:.6em;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:3px;display:block;}
+
+/* ── TAB NAV ─────────────────────────────────────────────── */
+.tab-nav{
+  background:var(--purple-dark);display:flex;overflow-x:auto;scrollbar-width:none;
+  border-bottom:3px solid var(--orange);position:sticky;top:0;z-index:200;
+}
+.tab-nav::-webkit-scrollbar{display:none;}
+.tab-btn{
+  background:none;border:none;color:rgba(255,255,255,.65);
+  padding:14px 18px;cursor:pointer;font-family:'Lato',sans-serif;
+  font-size:.82em;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  white-space:nowrap;transition:all .2s;border-bottom:3px solid transparent;
+  margin-bottom:-3px;
+}
+.tab-btn:hover{color:#fff;background:rgba(255,255,255,.07);}
+.tab-btn.active{color:var(--orange);border-bottom-color:var(--orange);background:rgba(245,102,0,.1);}
+
+/* ── TAB CONTENT ─────────────────────────────────────────── */
+.tab-pane{display:none;padding:24px 20px;max-width:1200px;margin:0 auto;animation:fadeIn .25s ease;}
+.tab-pane.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── CARDS ───────────────────────────────────────────────── */
+.card{background:#fff;border-radius:16px;box-shadow:0 4px 20px var(--shadow);padding:24px;margin-bottom:20px;border:1px solid var(--border);}
+.card-title{font-family:'Playfair Display',serif;font-size:1.35em;color:var(--purple);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.card-title small{font-family:'Lato',sans-serif;font-size:.6em;font-weight:400;color:var(--text-light);letter-spacing:1px;text-transform:uppercase;}
+.card-note{font-size:.85em;color:var(--text-light);font-style:italic;margin-bottom:12px;line-height:1.5;}
+
+/* ── STATS GRID ──────────────────────────────────────────── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-bottom:20px;}
+.stat{background:#fff;border-radius:12px;padding:18px 14px;text-align:center;border:2px solid var(--border);transition:border-color .2s;}
+.stat.o{border-color:var(--orange);background:var(--orange-light);}
+.stat.p{border-color:var(--purple);background:var(--purple-light);}
+.stat.g{border-color:var(--gold);background:var(--gold-light);}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.2em;font-weight:700;color:var(--purple);display:block;line-height:1;}
+.stat.o .stat-n{color:var(--orange);}
+.stat.g .stat-n{color:var(--gold);}
+.stat-l{font-size:.72em;text-transform:uppercase;letter-spacing:1.2px;color:var(--text-light);margin-top:5px;display:block;}
+
+/* ── BADGES ──────────────────────────────────────────────── */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.b-yes{background:var(--success-bg);color:var(--success);}
+.b-no{background:var(--danger-bg);color:var(--danger);}
+.b-maybe{background:var(--warning-bg);color:var(--warning);}
+.b-unknown{background:var(--neutral-bg);color:var(--neutral);}
+.b-alyssa{background:var(--purple-light);color:var(--purple);}
+.b-max{background:var(--orange-light);color:var(--orange-dark);}
+.b-included{background:var(--success-bg);color:var(--success);}
+.b-upgrade{background:var(--warning-bg);color:var(--warning);}
+.b-addon{background:#E3F2FD;color:#1565C0;}
+.b-paid{background:var(--success-bg);color:var(--success);}
+.b-due{background:var(--danger-bg);color:var(--danger);}
+.b-upcoming{background:var(--warning-bg);color:var(--warning);}
+.b-tbd{background:var(--neutral-bg);color:var(--neutral);}
+.b-confirmed{background:var(--success-bg);color:var(--success);}
+.b-pending{background:var(--warning-bg);color:var(--warning);}
+
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.btn{background:var(--orange);color:#fff;border:none;border-radius:10px;padding:10px 22px;font-size:.88em;cursor:pointer;font-family:'Lato',sans-serif;font-weight:700;letter-spacing:.8px;text-transform:uppercase;transition:all .2s;display:inline-flex;align-items:center;gap:6px;}
+.btn:hover{background:var(--orange-dark);transform:translateY(-1px);}
+.btn-p{background:var(--purple);}
+.btn-p:hover{background:var(--purple-dark);}
+.btn-sm{padding:6px 14px;font-size:.78em;}
+.btn-outline{background:transparent;border:2px solid var(--orange);color:var(--orange);}
+.btn-outline:hover{background:var(--orange);color:#fff;}
+.btn-ghost{background:transparent;border:2px solid var(--border);color:var(--text-light);}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange);}
+
+/* ── FILTER BAR ──────────────────────────────────────────── */
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;align-items:center;}
+.f-btn{background:#fff;border:2px solid var(--border);border-radius:20px;padding:5px 14px;font-size:.82em;cursor:pointer;transition:all .2s;font-family:'Lato',sans-serif;font-weight:600;}
+.f-btn:hover{border-color:var(--orange);color:var(--orange);}
+.f-btn.fa{background:var(--orange);border-color:var(--orange);color:#fff;}
+.f-btn.fp{background:var(--purple);border-color:var(--purple);color:#fff;}
+.search-box{border:2px solid var(--border);border-radius:20px;padding:7px 16px;font-size:.88em;outline:none;font-family:'Lato',sans-serif;transition:border-color .2s;min-width:200px;background:#fff;}
+.search-box:focus{border-color:var(--orange);}
+
+/* ── TABLES ──────────────────────────────────────────────── */
+.tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);}
+.tbl{width:100%;border-collapse:collapse;font-size:.88em;}
+.tbl th{background:var(--purple);color:#fff;padding:11px 14px;text-align:left;font-size:.78em;letter-spacing:.8px;text-transform:uppercase;font-weight:700;white-space:nowrap;}
+.tbl th:first-child{border-radius:11px 0 0 0;}
+.tbl th:last-child{border-radius:0 11px 0 0;}
+.tbl td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl tr:hover td{background:var(--purple-light);}
+.tbl-select{border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:.82em;background:#fff;cursor:pointer;font-family:'Lato',sans-serif;}
+.tbl-input{border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:.82em;font-family:'Lato',sans-serif;width:100%;min-width:80px;}
+
+/* ── CHECKLIST ───────────────────────────────────────────── */
+.tl-section{border-left:3px solid var(--orange);padding-left:20px;margin-bottom:24px;position:relative;}
+.tl-section::before{content:'';position:absolute;left:-9px;top:3px;width:15px;height:15px;background:var(--orange);border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 2px var(--orange);}
+.tl-title{font-family:'Playfair Display',serif;font-size:1.05em;color:var(--purple);margin-bottom:10px;font-weight:700;}
+.tl-title span{font-family:'Lato',sans-serif;font-size:.7em;font-weight:400;color:var(--text-light);margin-left:8px;}
+.chk-item{display:flex;align-items:flex-start;gap:10px;padding:9px 10px;border-radius:8px;transition:background .15s;cursor:pointer;}
+.chk-item:hover{background:var(--purple-light);}
+.chk-item input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);flex-shrink:0;margin-top:2px;cursor:pointer;}
+.chk-item label{cursor:pointer;flex:1;line-height:1.45;font-size:.9em;}
+.chk-item.done label{text-decoration:line-through;color:var(--text-light);}
+.chk-item .chk-note{font-size:.78em;color:var(--text-light);font-style:italic;display:block;margin-top:2px;}
+.chk-priority{font-size:.7em;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px;text-transform:uppercase;}
+.p-high{background:var(--danger-bg);color:var(--danger);}
+.p-med{background:var(--warning-bg);color:var(--warning);}
+
+/* Progress */
+.progress-wrap{background:var(--border);border-radius:10px;height:9px;overflow:hidden;margin:6px 0;}
+.progress-fill{background:linear-gradient(90deg,var(--orange),var(--purple));height:100%;border-radius:10px;transition:width .4s ease;}
+.progress-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;background:var(--purple-light);border-radius:10px;padding:12px 16px;}
+.progress-label{font-size:.88em;color:var(--purple);font-weight:700;min-width:100px;}
+.progress-pct{font-size:.88em;color:var(--text-light);min-width:40px;text-align:right;}
+
+/* ── VENUE PACKAGE ───────────────────────────────────────── */
+.pkg-item{display:flex;align-items:flex-start;gap:12px;padding:13px 16px;border-radius:10px;margin-bottom:8px;border:1px solid var(--border);transition:all .2s;}
+.pkg-item.included{background:#F8FFF8;border-color:#C8E6C9;}
+.pkg-item.upgrade{background:var(--warning-bg);border-color:#FFB74D;}
+.pkg-item.decision{background:var(--purple-light);border-color:var(--purple-mid);}
+.pkg-name{font-weight:700;color:var(--text);font-size:.9em;}
+.pkg-desc{font-size:.82em;color:var(--text-light);margin-top:3px;line-height:1.45;}
+.pkg-cost{font-weight:700;color:var(--orange);white-space:nowrap;font-size:.9em;margin-left:auto;padding-left:12px;}
+.pkg-icon{font-size:1.1em;flex-shrink:0;margin-top:1px;}
+.venue-extra{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;transition:all .2s;cursor:pointer;}
+.venue-extra:hover{border-color:var(--orange);}
+.venue-extra.selected{background:var(--orange-light);border-color:var(--orange);}
+.venue-extra input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);flex-shrink:0;margin-top:3px;}
+
+/* ── SCHEDULE ────────────────────────────────────────────── */
+.sched-day{border-radius:12px;overflow:hidden;margin-bottom:18px;border:1px solid var(--border);}
+.sched-day-hdr{background:var(--purple);color:#fff;padding:14px 20px;}
+.sched-day-hdr h3{font-family:'Playfair Display',serif;font-size:1.15em;font-weight:400;}
+.sched-day-hdr p{font-size:.72em;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-top:2px;}
+.sched-item{display:grid;grid-template-columns:90px 1fr;gap:14px;padding:11px 20px;border-bottom:1px solid var(--border);align-items:start;}
+.sched-item:last-child{border-bottom:none;}
+.sched-item:hover{background:var(--purple-light);}
+.sched-time{font-weight:700;color:var(--orange);font-size:.88em;padding-top:2px;}
+.sched-event{font-weight:700;font-size:.9em;}
+.sched-detail{font-size:.82em;color:var(--text-light);margin-top:2px;line-height:1.4;}
+
+/* ── VENDORS ─────────────────────────────────────────────── */
+.vendor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;}
+.vendor-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;border-top:4px solid var(--border);}
+.vendor-card.confirmed{border-top-color:#4CAF50;}
+.vendor-card.pending{border-top-color:var(--orange);}
+.vendor-card.tbd{border-top-color:#9E9E9E;}
+.vendor-name{font-family:'Playfair Display',serif;font-size:1.1em;color:var(--purple);margin-bottom:2px;}
+.vendor-type{font-size:.72em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light);margin-bottom:12px;}
+.vendor-row{font-size:.85em;margin-bottom:6px;display:flex;gap:8px;}
+.vendor-row strong{min-width:72px;color:var(--purple);flex-shrink:0;}
+
+/* ── HOTEL BLOCK ─────────────────────────────────────────── */
+.hotel-task{display:flex;align-items:flex-start;gap:12px;padding:11px 14px;background:#fff;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;transition:all .2s;}
+.hotel-task input[type=checkbox]{width:17px;height:17px;accent-color:var(--orange);flex-shrink:0;margin-top:2px;}
+.hotel-task label{cursor:pointer;font-size:.9em;flex:1;line-height:1.4;}
+.hotel-task.done{background:var(--success-bg);border-color:#A5D6A7;}
+.hotel-task.done label{text-decoration:line-through;color:var(--text-light);}
+
+/* ── FINANCE (LOCKED) ────────────────────────────────────── */
+.lock-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center;}
+.lock-icon{font-size:4em;margin-bottom:14px;}
+.lock-title{font-family:'Playfair Display',serif;font-size:1.8em;color:var(--purple);margin-bottom:6px;}
+.lock-sub{color:var(--text-light);margin-bottom:24px;font-size:.95em;}
+.pw-input{border:2px solid var(--border);border-radius:10px;padding:12px 22px;font-size:1.05em;outline:none;text-align:center;letter-spacing:4px;width:240px;margin-bottom:10px;display:block;font-family:'Lato',sans-serif;transition:border-color .2s;}
+.pw-input:focus{border-color:var(--orange);}
+.pw-err{color:var(--danger);font-size:.88em;margin-bottom:10px;display:none;}
+.finance-content{display:none;}
+.finance-content.unlocked{display:block;}
+
+/* Payment table */
+.pay-grid{display:grid;grid-template-columns:1fr 110px 130px 110px 100px 55px;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);align-items:center;font-size:.86em;}
+.pay-grid.hdr{background:var(--purple);color:#fff;font-weight:700;font-size:.76em;letter-spacing:.8px;text-transform:uppercase;border-radius:10px 10px 0 0;border-bottom:none;}
+.pay-grid:last-child{border-bottom:none;}
+.pay-grid:hover:not(.hdr){background:var(--purple-light);}
+
+/* ── MODAL ───────────────────────────────────────────────── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;justify-content:center;align-items:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal{background:#fff;border-radius:16px;padding:28px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.4em;color:var(--purple);margin-bottom:18px;}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:.8em;font-weight:700;color:var(--text);margin-bottom:5px;text-transform:uppercase;letter-spacing:.8px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;border:2px solid var(--border);border-radius:8px;padding:9px 13px;font-size:.9em;font-family:'Lato',sans-serif;outline:none;transition:border-color .2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--orange);}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
+
+/* ── TOAST ───────────────────────────────────────────────── */
+.toast{position:fixed;bottom:22px;right:22px;background:var(--purple);color:#fff;padding:12px 20px;border-radius:10px;font-size:.88em;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.toast.show{opacity:1;}
+
+/* ── DIVIDER ─────────────────────────────────────────────── */
+.divider{text-align:center;margin:18px 0;position:relative;}
+.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--border);}
+.divider span{background:var(--cream);padding:0 14px;position:relative;color:var(--text-light);font-size:1.2em;}
+
+/* ── UPCOMING PAYMENTS ───────────────────────────────────── */
+.pay-alert{display:flex;align-items:center;gap:14px;padding:13px 16px;border-radius:10px;margin-bottom:10px;border:1px solid;}
+.pay-alert.red{background:var(--danger-bg);border-color:#EF9A9A;}
+.pay-alert.amber{background:var(--warning-bg);border-color:#FFCC80;}
+.pay-alert.green{background:var(--success-bg);border-color:#A5D6A7;}
+.pay-alert-icon{font-size:1.4em;flex-shrink:0;}
+.pay-alert-body{flex:1;}
+.pay-alert-title{font-weight:700;font-size:.9em;}
+.pay-alert-detail{font-size:.8em;color:var(--text-light);margin-top:2px;}
+.pay-alert-amt{font-weight:700;font-size:1em;white-space:nowrap;}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media(max-width:768px){
+  .header-names{font-size:2.6em;}
+  .tab-btn{padding:12px 12px;font-size:.75em;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .sched-item{grid-template-columns:75px 1fr;}
+  .tbl{font-size:.8em;}
+  .tbl td,.tbl th{padding:7px 10px;}
+  .vendor-grid{grid-template-columns:1fr;}
+  .pay-grid{grid-template-columns:1fr 1fr;row-gap:4px;}
+  .pay-grid.hdr{display:none;}
+}
+@media(max-width:480px){
+  .header-names{font-size:2em;}
+  .cd-unit{min-width:58px;padding:10px 12px;}
+  .cd-num{font-size:1.7em;}
+}
+
+/* Venue package toggles */
+.pkg-item{cursor:pointer;}
+.guest-section-hdr td{background:var(--purple);color:#fff;padding:6px 12px;font-weight:700;font-size:.8em;text-transform:uppercase;letter-spacing:1px;}
+.pkg-item.opted-out{background:#F5F5F5 !important;border-color:#BDBDBD !important;opacity:.55;}
+.pkg-item.opted-out .pkg-name{text-decoration:line-through;color:var(--text-light);}
+.pkg-toggle{width:17px;height:17px;accent-color:var(--orange);flex-shrink:0;margin-top:3px;cursor:pointer;}
+/* Finance extras */
+.fin-extra-row{display:grid;grid-template-columns:1fr 130px 110px;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);align-items:center;font-size:.88em;}
+.fin-extra-row.hdr{background:var(--orange-light);color:var(--orange-dark);font-weight:700;font-size:.76em;letter-spacing:.8px;text-transform:uppercase;border-radius:10px 10px 0 0;border-bottom:none;}
+.calc-row{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);font-size:.88em;flex-wrap:wrap;}
+.calc-row label{min-width:220px;font-weight:600;color:var(--text);}
+.calc-result{font-weight:700;color:var(--orange);font-size:1em;min-width:80px;}
+</style>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  FIREBASE CONFIG — paste your values here              -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<script type="module">
+// ┌─────────────────────────────────────────────────────────┐
+// │  STEP 1: Replace the values below with your Firebase    │
+// │  project config (from Firebase Console >               │
+// │  Project Settings > Your apps > SDK setup)             │
+// └─────────────────────────────────────────────────────────┘
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey:            "AIzaSyCgQ4hDk_kRD8mp7KiOpV6DzDdaiDgmab4",
+  authDomain:        "alyssa-and-max-wedding.firebaseapp.com",
+  projectId:         "alyssa-and-max-wedding",
+  storageBucket:     "alyssa-and-max-wedding.firebasestorage.app",
+  messagingSenderId: "542813314724",
+  appId:             "1:542813314724:web:e73c640f40f5c27612d031"
+};
+
+const app = initializeApp(firebaseConfig);
+const db  = getFirestore(app);
+
+// ─── Firestore helpers ──────────────────────────────────────
+// All data lives in a single Firestore document: weddings/max-alyssa
+const WED_DOC = doc(db, 'weddings', 'max-alyssa');
+
+async function fbGet(key) {
+  try {
+    const snap = await getDoc(WED_DOC);
+    if (snap.exists()) return snap.data()[key] ?? null;
+    return null;
+  } catch(e) { console.warn('fbGet error', key, e); return null; }
+}
+
+async function fbSet(key, value) {
+  try {
+    await setDoc(WED_DOC, { [key]: value }, { merge: true });
+  } catch(e) { console.warn('fbSet error', key, e); }
+}
+
+// ─── Real-time listener: refresh UI when any other user saves ──
+onSnapshot(WED_DOC, (snap) => {
+  if (!snap.exists() || snap.metadata.hasPendingWrites) return;
+  // Remote update — silently reload data into memory and re-render
+  const d = snap.data();
+  if (typeof applyRemoteData === 'function') applyRemoteData(d);
+});
+
+// Expose to the rest of the page (non-module scripts)
+window.fbGet = fbGet;
+window.fbSet = fbSet;
+
+// Fire initApp once this module has loaded — handles both load orders
+function tryInit() {
+  if (typeof initApp === 'function') {
+    initApp();
+  } else {
+    setTimeout(tryInit, 50);
+  }
+}
+tryInit();
+</script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  SITE PASSWORD GATE                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="site-gate" style="
+  display:none;position:fixed;inset:0;z-index:99999;
+  background:linear-gradient(150deg,#3A1F5C 0%,#522D80 55%,#6B3FA0 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'Lato',sans-serif;
+">
+  <div style="font-size:3em;margin-bottom:12px;">💍</div>
+  <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:2.2em;color:#C9A84C;margin-bottom:6px;">Max &amp; Alyssa</div>
+  <div style="font-size:.85em;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:32px;">May 1, 2027 · Private Planning</div>
+  <input id="site-pw-input" type="password" placeholder="Enter password" style="
+    border:2px solid rgba(245,102,0,.6);border-radius:10px;padding:12px 22px;
+    font-size:1.05em;outline:none;text-align:center;letter-spacing:4px;
+    width:240px;margin-bottom:10px;font-family:'Lato',sans-serif;
+    background:rgba(255,255,255,.1);color:#fff;
+  " onkeydown="if(event.key==='Enter')checkSitePassword()">
+  <div id="site-pw-err" style="color:#FF8A80;font-size:.88em;margin-bottom:10px;display:none;">Incorrect password — try again</div>
+  <button onclick="checkSitePassword()" style="
+    background:#F56600;color:#fff;border:none;border-radius:10px;
+    padding:11px 32px;font-size:.95em;cursor:pointer;font-family:'Lato',sans-serif;
+    font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  ">Enter</button>
+</div>
+
+<div id="site-content" style="display:none;">
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  HEADER                                                 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<header class="site-header">
+  <div class="header-flowers">🌸 🌺 🌸</div>
+  <div class="header-names">Max <span class="header-amp">&amp;</span> Alyssa</div>
+  <div class="header-sub">Saturday · May 1, 2027</div>
+  <div class="header-venue">🏡 Lilly Creek Farm Events · Auraria, GA</div>
+  <div class="countdown" id="countdown">
+    <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">Days</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-lbl">Hours</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-lbl">Minutes</span></div>
+    <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-lbl">Seconds</span></div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB NAVIGATION                                         -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<nav class="tab-nav" role="tablist">
+  <button class="tab-btn active" onclick="showTab('dashboard')" id="tb-dashboard">🏠 Dashboard</button>
+  <button class="tab-btn" onclick="showTab('checklist')" id="tb-checklist">✅ Checklist</button>
+  <button class="tab-btn" onclick="showTab('venue')" id="tb-venue">🏡 Venue Package</button>
+  <button class="tab-btn" onclick="showTab('guests')" id="tb-guests">👥 Guest List</button>
+  <button class="tab-btn" onclick="showTab('schedule')" id="tb-schedule">📅 Weekend</button>
+  <button class="tab-btn" onclick="showTab('hotel')" id="tb-hotel">🏨 Hotel Block</button>
+  <button class="tab-btn" onclick="showTab('vendors')" id="tb-vendors">📋 Vendors</button>
+  <button class="tab-btn" onclick="showTab('finance')" id="tb-finance" title="Finances"><svg width="22" height="22" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;display:inline-block;"><ellipse cx="42" cy="72" rx="34" ry="27" fill="#F56600" transform="rotate(-8,42,72)"/><ellipse cx="11" cy="44" rx="11" ry="14" fill="#F56600" transform="rotate(-25,11,44)"/><ellipse cx="34" cy="28" rx="13" ry="15" fill="#F56600" transform="rotate(-5,34,28)"/><ellipse cx="58" cy="26" rx="13" ry="15" fill="#F56600" transform="rotate(5,58,26)"/><ellipse cx="79" cy="40" rx="10" ry="13" fill="#F56600" transform="rotate(20,79,40)"/></svg></button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 1 · DASHBOARD                                      -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane active" id="tab-dashboard">
+
+  <!-- Key Stats -->
+  <div class="stats-grid" id="dash-stats">
+    <div class="stat o"><span class="stat-n" id="ds-days">--</span><span class="stat-l">Days to Go</span></div>
+    <div class="stat p"><span class="stat-n" id="ds-confirmed">--</span><span class="stat-l">Confirmed Guests</span></div>
+    <div class="stat g"><span class="stat-n" id="ds-invited">--</span><span class="stat-l">Total Invited</span></div>
+    <div class="stat p"><span class="stat-n" id="ds-tasks">--</span><span class="stat-l">Tasks Done</span></div>
+    <div class="stat o"><span class="stat-n" id="ds-ty">--</span><span class="stat-l">Thank-You's Sent</span></div>
+    <div class="stat"><span class="stat-n" id="ds-unknown">--</span><span class="stat-l">Still Need RSVP</span></div>
+  </div>
+
+  <!-- Guest Side Split -->
+  <div class="card">
+    <div class="card-title">💐 Guest Count</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div style="background:var(--purple-light);border-radius:12px;padding:18px;text-align:center;">
+        <div style="font-size:2em;margin-bottom:4px;">🌸</div>
+        <div style="font-family:'Playfair Display',serif;font-size:2em;color:var(--purple);" id="ds-aly-ct">--</div>
+        <div style="font-size:.8em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light);margin-top:4px;">Alyssa's Responses</div>
+        <div style="font-size:.78em;color:var(--text-light);margin-top:4px;" id="ds-aly-pct"></div>
+      </div>
+      <div style="background:var(--orange-light);border-radius:12px;padding:18px;text-align:center;">
+        <div style="font-size:2em;margin-bottom:4px;">🏈</div>
+        <div style="font-family:'Playfair Display',serif;font-size:2em;color:var(--orange-dark);" id="ds-max-ct">--</div>
+        <div style="font-size:.8em;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-light);margin-top:4px;">Max's Responses</div>
+        <div style="font-size:.78em;color:var(--text-light);margin-top:4px;" id="ds-max-pct"></div>
+      </div>
+    </div>
+    <div style="margin-top:14px;">
+      <div style="font-size:.8em;color:var(--text-light);margin-bottom:5px;">Venue capacity: <strong>150 included</strong></div>
+      <div id="vp-extra-summary" style="font-size:.85em;padding:8px 12px;border-radius:8px;margin-bottom:6px;background:var(--orange-light);color:var(--orange-dark);font-weight:600;display:none;"></div>
+      <div class="progress-wrap"><div class="progress-fill" id="ds-cap-bar" style="width:0%"></div></div>
+      <div style="font-size:.78em;color:var(--text-light);margin-top:4px;" id="ds-cap-lbl"></div>
+    </div>
+  </div>
+
+  <!-- Upcoming Payments -->
+  <div class="card">
+    <div class="card-title">💳 Payment Progress</div>
+    <div class="pay-alert green">
+      <div class="pay-alert-icon">✅</div>
+      <div class="pay-alert-body">
+        <div class="pay-alert-title">Lilly Creek Farm — Booking Deposit Paid!</div>
+        <div class="pay-alert-detail">Paid 2/15/2026 via ACH · Date reserved</div>
+      </div>
+      <div class="pay-alert-amt" style="color:var(--success);">Paid ✓</div>
+    </div>
+    <div class="pay-alert amber">
+      <div class="pay-alert-icon">⚠️</div>
+      <div class="pay-alert-body">
+        <div class="pay-alert-title">Lilly Creek Farm — Payment 2 (25%)</div>
+        <div class="pay-alert-detail">Due November 1, 2026 · 6 months before wedding</div>
+      </div>
+      <div class="pay-alert-amt" style="color:var(--warning);">Unpaid</div>
+    </div>
+    <div class="pay-alert amber">
+      <div class="pay-alert-icon">⚠️</div>
+      <div class="pay-alert-body">
+        <div class="pay-alert-title">Lilly Creek Farm — Payment 3 (25%)</div>
+        <div class="pay-alert-detail">Due January 30, 2027 · 90 days before wedding</div>
+      </div>
+      <div class="pay-alert-amt" style="color:var(--warning);">Unpaid</div>
+    </div>
+    <div class="pay-alert amber">
+      <div class="pay-alert-icon">⚠️</div>
+      <div class="pay-alert-body">
+        <div class="pay-alert-title">Lilly Creek Farm — Final Balance · ⚠️ CASH ONLY</div>
+        <div class="pay-alert-detail">Due April 1, 2027 · 30 days before · Must be paid in cash</div>
+      </div>
+      <div class="pay-alert-amt" style="color:var(--warning);">Unpaid</div>
+    </div>
+    <div id="dash-pay-progress" style="margin:10px 0 6px;"></div>
+  </div>
+
+  <!-- Quick Checklist Preview -->
+  <div class="card">
+    <div class="card-title">✅ Planning Progress <small>· click Checklist tab for full list</small></div>
+    <div class="progress-row">
+      <div class="progress-label">Overall</div>
+      <div class="progress-wrap" style="flex:1"><div class="progress-fill" id="ds-prog-bar" style="width:0%"></div></div>
+      <div class="progress-pct" id="ds-prog-pct">0%</div>
+    </div>
+    <div id="dash-checklist-preview"></div>
+    <div style="margin-top:12px;">
+      <button class="btn btn-outline btn-sm" onclick="showTab('checklist')">View Full Checklist →</button>
+    </div>
+  </div>
+
+  <!-- Key Contacts -->
+  <div class="card">
+    <div class="card-title">📞 Key Contacts</div>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Name <small style="font-weight:400;opacity:.7;">(click to edit)</small></th><th>Role</th><th>Phone / Email</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lilly Creek Farm Events</strong></td><td>Venue</td><td>770-262-2374<br><a href="/cdn-cgi/l/email-protection#0e62676262776d7c6b6b65686f7c636b786b607a7d4e69636f6762206d6163" style="color:var(--orange);"><span class="__cf_email__" data-cfemail="5a363336362339283f3f313c3b28373f2c3f342e291a3d373b333674393537">[email&#160;protected]</span></a></td><td>1654 Auraria Rd, GA</td></tr>
+          <tr><td><strong>Shelby Norris</strong></td><td>Photographer</td><td>—</td><td>Shelby Norris Photography · contract template provided</td></tr>
+          <tr><td><strong>Joe</strong></td><td>Skeet Shoot</td><td>706-974-8232</td><td>Groomsmen 10am arrival</td></tr>
+          <tr><td><strong>Sabrosa Catering</strong></td><td>Caterer Option A</td><td>—</td><td>Included in venue package</td></tr>
+          <tr><td><strong>Tams Backstage</strong></td><td>Caterer Option B</td><td>—</td><td>Included in venue package</td></tr>
+          <tr><td><strong>Photofalia</strong></td><td>Photo Booth</td><td>—</td><td>VW Bus booth · 3 hrs · keepsake album</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 2 · CHECKLIST                                      -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-checklist">
+
+  <div class="card">
+    <div class="card-title">✅ Wedding Planning Checklist</div>
+    <div class="progress-row">
+      <div class="progress-label">Progress</div>
+      <div class="progress-wrap" style="flex:1"><div class="progress-fill" id="chk-prog-bar" style="width:0%"></div></div>
+      <div class="progress-pct" id="chk-prog-pct">0%</div>
+    </div>
+    <p class="card-note">Check items off as you go — progress saves automatically in your browser.</p>
+  </div>
+
+  <!-- 18+ Months -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">🎊 Foundation <span>18+ months before</span></div>
+      <div id="cl-foundation"></div>
+    </div>
+  </div>
+
+  <!-- 12 Months -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">📅 12 Months Out <span>by May 2026</span></div>
+      <div id="cl-12mo"></div>
+    </div>
+  </div>
+
+  <!-- 9 Months -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">🌸 9 Months Out <span>by August 2026</span></div>
+      <div id="cl-9mo"></div>
+    </div>
+  </div>
+
+  <!-- 6 Months -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">💌 6 Months Out <span>by November 2026</span></div>
+      <div id="cl-6mo"></div>
+    </div>
+  </div>
+
+  <!-- 3 Months -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">🎀 3 Months Out <span>by February 2027</span></div>
+      <div id="cl-3mo"></div>
+    </div>
+  </div>
+
+  <!-- 1 Month -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">🔔 1 Month Out <span>by April 2027</span></div>
+      <div id="cl-1mo"></div>
+    </div>
+  </div>
+
+  <!-- Final Week -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">🌟 Final Week <span>April 24–30, 2027</span></div>
+      <div id="cl-week"></div>
+    </div>
+  </div>
+
+  <!-- Day Of -->
+  <div class="card">
+    <div class="tl-section" style="border-left-color:var(--gold)">
+      <div class="tl-title" style="color:var(--gold)">💍 Wedding Day <span>May 1, 2027</span></div>
+      <div id="cl-dayof"></div>
+    </div>
+  </div>
+
+  <!-- After Wedding -->
+  <div class="card">
+    <div class="tl-section">
+      <div class="tl-title">🙏 After the Wedding</div>
+      <div id="cl-after"></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 3 · VENUE PACKAGE                                  -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-venue">
+
+  <!-- Header Info -->
+  <div class="card">
+    <div class="card-title">🏡 Lilly Creek Farm Events LLC <small>· Invoice #879</small></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:14px;">
+      <div><strong style="color:var(--purple);">Wedding Date:</strong><br>Saturday, May 1, 2027</div>
+      <div><strong style="color:var(--purple);">Total Due:</strong><br>$40,674.00</div>
+      <div><strong style="color:var(--purple);">Payment Terms:</strong><br>90 · 60 · 30 days before</div>
+      <div><strong style="color:var(--purple);">Base Package:</strong><br>$37,900.00</div>
+      <div><strong style="color:var(--purple);">Service Fee (6%):</strong><br>$2,274.00</div>
+      <div><strong style="color:var(--purple);">Damage Deposit:</strong><br>$500 (returned in 30 days)</div>
+    </div>
+    <p class="card-note">📧 Credit card payments: email request to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f894919494819b8a9d9d939e998a959d8e9d968c8bb89f95999194d69b9795">[email&#160;protected]</a> — note: 3% fee added. Phone: 770-262-2374</p>
+  </div>
+
+  <!-- Included Items -->
+  <div class="card">
+    <div class="card-title">✅ Included in Your Package</div>
+    <p class="card-note">All items below are included in the $37,900 All-Inclusive Package at no additional charge.</p>
+
+    <div class="pkg-item included" id="vi1" onclick="togglePkgItem('vi1')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi1')"><div class="pkg-icon">⏰</div><div><div class="pkg-name">All-Inclusive Event Time</div><div class="pkg-desc">6 hours ceremony &amp; reception (end by 10 PM). Bridal party arrival 8:00 AM. 1 hour rehearsal time — choose: Thursday (anytime), Friday 10 AM, or Saturday 10 AM.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi2" onclick="togglePkgItem('vi2')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi2')"><div class="pkg-icon">🍽️</div><div><div class="pkg-name">Premium Catering</div><div class="pkg-desc">Buffet-style for 150 guests with hand-passed &amp; stationed appetizers, 2-entrée menu. Choose: <strong>Sabrosa Catering</strong> or <strong>Tams Backstage</strong>. Additional guests: $85/person.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi3" onclick="togglePkgItem('vi3')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi3')"><div class="pkg-icon">📋</div><div><div class="pkg-name">Day-of Event Coordination</div><div class="pkg-desc">Aisle Planner software (shared with bride, vendors &amp; Lilly Creek), 2 in-person meetings, initial welcome call, all details finalized 30 days prior including guest count.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi4" onclick="togglePkgItem('vi4')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi4')"><div class="pkg-icon">👷</div><div><div class="pkg-name">Staff Members</div><div class="pkg-desc">Full staff for setup, takedown, bussing tables, packing up vehicles, cleaning venue, and managing all wedding details.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi5" onclick="togglePkgItem('vi5')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi5')"><div class="pkg-icon">🌹</div><div><div class="pkg-name">Florals</div><div class="pkg-desc">Custom real floral package — $2,000 allotment for bouquets, boutonnieres, and additional bride-selected areas. Custom decor appointment included. Additional florals can be added to invoice.</div></div><div class="pkg-cost"><span class="badge b-included">$2,000 allotment</span></div></div>
+
+    <div class="pkg-item included" id="vi6" onclick="togglePkgItem('vi6')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi6')"><div class="pkg-icon">🎨</div><div><div class="pkg-name">Table Decor</div><div class="pkg-desc">Linens, charger plates, silk barrel arrangements, and additional selection choices (see ngerentals.com). Custom decor appointment with Lilly Creek coordinator for tablescapes, room layouts &amp; ceremony area.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi7" onclick="togglePkgItem('vi7')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi7')"><div class="pkg-icon">🍴</div><div><div class="pkg-name">Dinnerware Package</div><div class="pkg-desc">Dinner plate, cake plate, flatware, and water goblet for all guests.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi8" onclick="togglePkgItem('vi8')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi8')"><div class="pkg-icon">🍺</div><div><div class="pkg-name">Premium Bar</div><div class="pkg-desc">5 hours pouring time — beer, wine, seltzers, up to 3 signature cocktails. Includes setup &amp; prep, ice, napkins, cocktail cups, wine glasses, stirrers, 30-day courtesy call for shopping list, cleanup &amp; load-out.</div></div><div class="pkg-cost"><span class="badge b-included">5 hrs</span></div></div>
+
+    <div class="pkg-item included" id="vi9" onclick="togglePkgItem('vi9')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi9')"><div class="pkg-icon">🍋</div><div><div class="pkg-name">Non-Alcoholic Beverage Service</div><div class="pkg-desc">Tea &amp; lemonade service beginning at dinner time with disposable cups. Available the entire event.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi10" onclick="togglePkgItem('vi10')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi10')"><div class="pkg-icon">👮</div><div><div class="pkg-name">Off-Duty Officer</div><div class="pkg-desc">Required by the county. Included in package.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi11" onclick="togglePkgItem('vi11')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi11')"><div class="pkg-icon">🎯</div><div><div class="pkg-name">Skeet Shoot Package</div><div class="pkg-desc">Groomsmen activity! Contact: Joe @ 706-974-8232. 10:00 AM arrival, skeet shoot + tannerite. Guns, ammo &amp; protective gear provided.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi12" onclick="togglePkgItem('vi12')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi12')"><div class="pkg-icon">💄</div><div><div class="pkg-name">Bridal Suites</div><div class="pkg-desc">Waters, sodas, coffee bar, steamers, storage shelves, Bluetooth speaker, mini fridge. Outside food, beer, wine, seltzers &amp; champagne allowed. Access until end of event. Note: all alcohol before ceremony must be served by bartender.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi13" onclick="togglePkgItem('vi13')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi13')"><div class="pkg-icon">🪑</div><div><div class="pkg-name">Chairs</div><div class="pkg-desc">Wood chairs for reception. White chairs for ceremony. <em>Upgrade to wood chairs at ceremony: $5/chair.</em></div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi14" onclick="togglePkgItem('vi14')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi14')"><div class="pkg-icon">🌿</div><div><div class="pkg-name">Patio Setup — Cocktail Hour</div><div class="pkg-desc">Patio tables with linens + cornhole boards for cocktail hour entertainment.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi15" onclick="togglePkgItem('vi15')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi15')"><div class="pkg-icon">🎂</div><div><div class="pkg-name">Cake / Dessert</div><div class="pkg-desc">$750 allotment toward dessert of your choice.</div></div><div class="pkg-cost"><span class="badge b-included">$750 allotment</span></div></div>
+
+    <div class="pkg-item included" id="vi16" onclick="togglePkgItem('vi16')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi16')"><div class="pkg-icon">🎵</div><div><div class="pkg-name">Ultimate DJ Package</div><div class="pkg-desc">Ceremony setup, lapel mic for officiant, pre-ceremony music, cocktail hour music, DMX wireless uplighting system, choice of checkered dance floor or outdoor dance floor setup. 6 hours total.</div></div><div class="pkg-cost"><span class="badge b-included">6 hrs</span></div></div>
+
+    <div class="pkg-item included" id="vi17" onclick="togglePkgItem('vi17')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi17')"><div class="pkg-icon">📸</div><div><div class="pkg-name">Photo Booth — Photofalia</div><div class="pkg-desc">Volkswagen bus photo booth for 3 hours with keepsake album for guests.</div></div><div class="pkg-cost"><span class="badge b-included">3 hrs</span></div></div>
+
+    <div class="pkg-item included" id="vi18" onclick="togglePkgItem('vi18')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi18')"><div class="pkg-icon">☕</div><div><div class="pkg-name">Barista Bar</div><div class="pkg-desc">Custom hot or cold lattes &amp; espresso drinks for 2 hours.</div></div><div class="pkg-cost"><span class="badge b-included">2 hrs</span></div></div>
+
+    <div class="pkg-item included" id="vi19" onclick="togglePkgItem('vi19')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi19')"><div class="pkg-icon">🥂</div><div><div class="pkg-name">Champagne Wall + Champagne Tower</div><div class="pkg-desc">Champagne flutes for a champagne wall display and coupe tower.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi20" onclick="togglePkgItem('vi20')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi20')"><div class="pkg-icon">🍕</div><div><div class="pkg-name">Late Night Pizza Bar</div><div class="pkg-desc">Pizza bar as a late-night snack for guests.</div></div><div class="pkg-cost"><span class="badge b-included">Included</span></div></div>
+
+    <div class="pkg-item included" id="vi21" onclick="togglePkgItem('vi21')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi21')"><div class="pkg-icon">✨</div><div><div class="pkg-name">Marquee Letters</div><div class="pkg-desc">Light-up marquee letters — 4 included. Additional letters: $50 each.</div></div><div class="pkg-cost"><span class="badge b-included">4 included</span></div></div>
+
+    <div class="pkg-item included" id="vi22" onclick="togglePkgItem('vi22')" title="Click to opt in/out"><input type="checkbox" class="pkg-toggle" checked onclick="event.stopPropagation();togglePkgItem('vi22')"><div class="pkg-icon">🎆</div><div><div class="pkg-name">Send-Off</div><div class="pkg-desc">Choose one: (A) Fireworks + 4 love letters, (B) Helicopter tour, or (C) Getaway car.</div></div><div class="pkg-cost"><span class="badge b-included">Choose 1</span></div></div>
+  </div>
+
+  <!-- Decisions Needed -->
+  <div class="card">
+    <div class="card-title">📝 Decisions Needed</div>
+    <p class="card-note">These items are included but require your selection. Check off once decided.</p>
+
+    <div class="venue-extra" id="vd-catering" onclick="if(event.target.tagName!='INPUT'&&event.target.tagName!='SELECT'&&event.target.tagName!='LABEL')toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1">
+        <div class="pkg-name">🍽️ Catering Company Choice</div>
+        <div class="pkg-desc">Choose between <strong>Sabrosa Catering</strong> or <strong>Tams Backstage</strong>. Buffet for 150 with appetizers &amp; 2 entrées. Additional guests: $85/person.</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:8px;margin-top:10px;" onclick="event.stopPropagation()">
+          <div><label style="font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--purple);display:block;margin-bottom:3px;">Selection</label>
+            <select class="tbl-select" style="width:100%;" id="cat-choice" onchange="saveCateringInfo()">
+              <option value="">— Not yet chosen —</option>
+              <option value="Sabrosa Catering">Sabrosa Catering</option>
+              <option value="Tams Backstage">Tams Backstage</option>
+            </select></div>
+          <div><label style="font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--purple);display:block;margin-bottom:3px;">Decided By</label>
+            <input type="text" class="tbl-input" id="cat-who" placeholder="Who decided..."></div>
+          <div><label style="font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--purple);display:block;margin-bottom:3px;">Date Decided</label>
+            <input type="date" class="tbl-input" id="cat-when"></div>
+          <div><label style="font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--purple);display:block;margin-bottom:3px;">Notes</label>
+            <input type="text" class="tbl-input" id="cat-notes" placeholder="Menu preferences..."></div>
+        </div>
+        <div id="cat-saved-display" style="display:none;font-size:.8em;color:var(--success);margin-top:6px;font-weight:700;"></div>
+      </div>
+    </div>
+    <div class="venue-extra" id="vd-sendoff" onclick="toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1"><div class="pkg-name">🎆 Send-Off Option</div><div class="pkg-desc">Choose: Fireworks + 4 love letters · Helicopter tour · Getaway car</div></div>
+    </div>
+    <div class="venue-extra" id="vd-cocktails" onclick="toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1"><div class="pkg-name">🍹 3 Signature Cocktails</div><div class="pkg-desc">Select your 3 signature cocktails for the bar (30-day courtesy call will help with shopping list).</div></div>
+    </div>
+    <div class="venue-extra" id="vd-dancefloor" onclick="toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1"><div class="pkg-name">🕺 Dance Floor Style</div><div class="pkg-desc">Choose: Checkered dance floor OR outdoor dance floor setup.</div></div>
+    </div>
+    <div class="venue-extra" id="vd-rehearsal" onclick="toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1"><div class="pkg-name">📅 Rehearsal Time Slot</div><div class="pkg-desc">Choose: Thursday (anytime) · Friday 10 AM · Saturday 10 AM</div></div>
+    </div>
+    <div class="venue-extra" id="vd-marquee" onclick="toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1"><div class="pkg-name">✨ Marquee Letter Content</div><div class="pkg-desc">4 letters included — decide what letters to display. Additional: $50 each.</div></div>
+    </div>
+    <div class="venue-extra" id="vd-decor" onclick="toggleVenueDecision(this)">
+      <input type="checkbox" onclick="event.stopPropagation();toggleVenueDecision(this.closest('.venue-extra'))">
+      <div style="flex:1"><div class="pkg-name">🎨 Custom Decor Appointment</div><div class="pkg-desc">Schedule appointment with Lilly Creek coordinator for tablescapes, room layouts &amp; ceremony selections.</div></div>
+    </div>
+  </div>
+
+  <!-- Upgrades & Add-ons -->
+  <div class="card">
+    <div class="card-title">⬆️ Available Upgrades</div>
+    <div class="pkg-item upgrade"><div class="pkg-icon">🪑</div><div><div class="pkg-name">Wood Chair Ceremony Upgrade</div><div class="pkg-desc">Upgrade from white chairs to wood chairs for the ceremony area.</div></div><div class="pkg-cost">$5 / chair</div></div>
+    <div class="pkg-item upgrade"><div class="pkg-icon">👥</div><div><div class="pkg-name">Additional Guests (over 150)</div><div class="pkg-desc">Catering included for 150. Add more guests at $85 per person.</div></div><div class="pkg-cost">$85 / person</div></div>
+    <div class="pkg-item upgrade"><div class="pkg-icon">💳</div><div><div class="pkg-name">Credit Card Payment</div><div class="pkg-desc">Email <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3f53565353465c4d5a5a54595e4d525a495a514b4c7f58525e5653115c5052">[email&#160;protected]</a> to enable card payments. Surcharge applies.</div></div><div class="pkg-cost">+3%</div></div>
+    <div class="pkg-item upgrade"><div class="pkg-icon">✨</div><div><div class="pkg-name">Additional Marquee Letters</div><div class="pkg-desc">Beyond the 4 included letters.</div></div><div class="pkg-cost">$50 each</div></div>
+    <div class="pkg-item upgrade"><div class="pkg-icon">💐</div><div><div class="pkg-name">Additional Florals</div><div class="pkg-desc">Beyond the $2,000 allotment — can be paid to vendor or added to invoice.</div></div><div class="pkg-cost">TBD</div></div>
+    <div class="pkg-item upgrade"><div class="pkg-icon">🎂</div><div><div class="pkg-name">Cake / Dessert Over Allotment</div><div class="pkg-desc">Anything beyond the $750 cake allotment.</div></div><div class="pkg-cost">Overage TBD</div></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 4 · GUEST LIST                                     -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-guests">
+
+
+
+  <!-- Filters & Search -->
+  <div class="card" style="padding:16px 20px;">
+    <div class="filter-bar" style="justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <input class="search-box" type="text" id="gl-search" placeholder="🔍 Search guests..." oninput="renderGuests()" style="flex:1;min-width:200px;">
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+        <strong style="font-size:.8em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;">Sort:</strong>
+        <button class="f-btn fa" id="sort-orig"   onclick="setSort('original',this)">Original</button>
+        <button class="f-btn"    id="sort-lname"  onclick="setSort('lastname',this)">Last Name</button>
+        <button class="f-btn"    id="sort-side"   onclick="setSort('side',this)">Host</button>
+      </div>
+    </div>
+    <div class="filter-bar" style="margin-bottom:8px;">
+      <strong style="font-size:.8em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-right:4px;">Host:</strong>
+      <button class="f-btn fa" onclick="setFilter('side','all',this)">All</button>
+      <button class="f-btn" onclick="setFilter('side','Alyssa',this)">🌸 Alyssa</button>
+      <button class="f-btn" onclick="setFilter('side','Max',this)">🏈 Max</button>
+    </div>
+    <div class="filter-bar" style="margin-bottom:8px;">
+      <strong style="font-size:.8em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-right:4px;">RSVP:</strong>
+      <button class="f-btn fa" onclick="setFilter('rsvp','all',this)">All</button>
+      <button class="f-btn" onclick="setFilter('rsvp','Yes',this)">✅ Yes</button>
+      <button class="f-btn" onclick="setFilter('rsvp','No',this)">❌ No</button>
+      <button class="f-btn" onclick="setFilter('rsvp','Maybe',this)">❓ Maybe</button>
+      <button class="f-btn" onclick="setFilter('rsvp','Unknown',this)">⬜ Unknown</button>
+    </div>
+    <div class="filter-bar" style="margin-bottom:8px;">
+      <strong style="font-size:.8em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-right:4px;">Invited:</strong>
+      <button class="f-btn fa" onclick="setFilter('inv','all',this)">All</button>
+      <button class="f-btn" onclick="setFilter('inv','Yes',this)">✅ Yes</button>
+      <button class="f-btn" onclick="setFilter('inv','Maybe',this)">❓ Maybe</button>
+      <button class="f-btn" onclick="setFilter('inv','Remove',this)">🗑️ Removed</button>
+    </div>
+    <div class="filter-bar" style="justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+        <strong style="font-size:.8em;color:var(--text-light);text-transform:uppercase;letter-spacing:1px;margin-right:4px;">Thank-You:</strong>
+        <button class="f-btn fa" onclick="setFilter('ty','all',this)">All</button>
+        <button class="f-btn" onclick="setFilter('ty','sent',this)">✉️ Sent</button>
+        <button class="f-btn" onclick="setFilter('ty','unsent',this)">📬 Not Sent</button>
+      </div>
+      <div style="display:flex;gap:8px;flex-shrink:0;">
+        <button class="btn btn-sm" onclick="openModal('add-guest-modal')">➕ Add Guest</button>
+        <button class="btn btn-sm btn-p" onclick="exportGuests()" title="Download guest list as CSV">📥 Download Guest List</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="card" style="padding:0;overflow:hidden;">
+    <div class="tbl-wrap">
+      <table class="tbl" id="guest-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Host</th>
+            <th>Invited</th>
+            <th>RSVP</th>
+            <th>Count</th>
+            <th>Thank-You</th>
+            <th>Rehearsal</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="guest-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 5 · WEEKEND SCHEDULE                               -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-schedule">
+  <p class="card-note" style="padding:0 4px 12px;">Click any event to add notes. All changes save automatically.</p>
+
+  <!-- Thursday -->
+  <div class="sched-day">
+    <div class="sched-day-hdr"><h3>🌿 Thursday — April 29, 2027</h3><p>Rehearsal Day</p></div>
+    <div class="sched-item"><div class="sched-time">TBD AM</div><div><div class="sched-event">Venue Rehearsal</div><div class="sched-detail">1-hour rehearsal at Lilly Creek Farm (Thursday option — anytime). Coordinate with officiant &amp; wedding party.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Evening</div><div><div class="sched-event">🍽️ Rehearsal Dinner</div><div class="sched-detail">Location TBD — plan for wedding party + immediate family. Add details below.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Notes</div><div><div class="sched-event" style="font-weight:400;"><textarea class="tbl-input" style="width:100%;min-width:unset;" rows="2" placeholder="Add rehearsal dinner details, venue, guests, time..." onchange="saveSchedNote('thu',this.value)" id="sn-thu"></textarea></div></div></div>
+  </div>
+
+  <!-- Friday -->
+  <div class="sched-day">
+    <div class="sched-day-hdr"><h3>🌙 Friday — April 30, 2027</h3><p>Pre-Wedding Day</p></div>
+    <div class="sched-item"><div class="sched-time">10:00 AM</div><div><div class="sched-event">Venue Rehearsal (Friday Option)</div><div class="sched-detail">Alternative rehearsal time at Lilly Creek Farm if not doing Thursday.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Afternoon</div><div><div class="sched-event">Free Time / Family Arrivals</div><div class="sched-detail">Out-of-town guests arriving. Consider brunch or afternoon gathering.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Evening</div><div><div class="sched-event">🎉 Post-Rehearsal Dinner Gathering</div><div class="sched-detail">Friday night event — welcome party, bonfire, bar hop, or casual get-together. Details TBD.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Notes</div><div><div class="sched-event" style="font-weight:400;"><textarea class="tbl-input" style="width:100%;min-width:unset;" rows="2" placeholder="Friday night event details, venue, time, guest list..." onchange="saveSchedNote('fri',this.value)" id="sn-fri"></textarea></div></div></div>
+  </div>
+
+  <!-- Saturday -->
+  <div class="sched-day">
+    <div class="sched-day-hdr" style="background:linear-gradient(135deg,var(--purple-dark),var(--orange-dark));"><h3>💍 Saturday — May 1, 2027 · THE BIG DAY</h3><p>Max &amp; Alyssa's Wedding</p></div>
+    <div class="sched-item"><div class="sched-time">8:00 AM</div><div><div class="sched-event">🌸 Bridal Party Arrives at Venue</div><div class="sched-detail">Bridal party reports to bridal suites. Hair &amp; makeup begins. Suites stocked with waters, sodas, coffee bar.</div></div></div>
+    <div class="sched-item"><div class="sched-time">10:00 AM</div><div><div class="sched-event">🎯 Groomsmen Skeet Shoot</div><div class="sched-detail">Joe @ 706-974-8232 — guns, ammo &amp; protective gear provided. Tannerite included!</div></div></div>
+    <div class="sched-item"><div class="sched-time">10:00 AM</div><div><div class="sched-event">Venue Rehearsal (Saturday Option)</div><div class="sched-detail">If using Saturday 10 AM rehearsal slot.</div></div></div>
+    <div class="sched-item"><div class="sched-time">TBD</div><div><div class="sched-event">📸 First Look / Couple Photos</div><div class="sched-detail">Shelby Norris Photography. Allow 45–60 min window before or after ceremony for formals.</div></div></div>
+    <div class="sched-item"><div class="sched-time">TBD</div><div><div class="sched-event">💍 Ceremony</div><div class="sched-detail">Ceremony at Lilly Creek Farm. White chairs set up (wood chair upgrade: $5/chair).</div></div></div>
+    <div class="sched-item"><div class="sched-time">Cocktail Hour</div><div><div class="sched-event">🥂 Cocktail Hour</div><div class="sched-detail">Patio with tables, linens, cornhole boards. Bar opens. Photo booth (Photofalia VW Bus) available.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Reception</div><div><div class="sched-event">🎉 Reception (6 Hours Total)</div><div class="sched-detail">DJ, dinner, dancing. Barista bar, champagne wall &amp; tower, pizza bar late night, marquee letters.</div></div></div>
+    <div class="sched-item"><div class="sched-time">By 10 PM</div><div><div class="sched-event">🎆 Send-Off</div><div class="sched-detail">Choose: Fireworks + 4 love letters · Helicopter tour · Getaway car. Reception ends by 10 PM.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Notes</div><div><div class="sched-event" style="font-weight:400;"><textarea class="tbl-input" style="width:100%;min-width:unset;" rows="3" placeholder="Add ceremony time, exact timeline, special moments..." onchange="saveSchedNote('sat',this.value)" id="sn-sat"></textarea></div></div></div>
+  </div>
+
+  <!-- Sunday -->
+  <div class="sched-day">
+    <div class="sched-day-hdr"><h3>☀️ Sunday — May 2, 2027</h3><p>Day After</p></div>
+    <div class="sched-item"><div class="sched-time">Morning</div><div><div class="sched-event">Farewell Brunch (optional)</div><div class="sched-detail">Consider hosting a morning-after brunch for out-of-town guests. Location TBD.</div></div></div>
+    <div class="sched-item"><div class="sched-time">Notes</div><div><div class="sched-event" style="font-weight:400;"><textarea class="tbl-input" style="width:100%;min-width:unset;" rows="2" placeholder="Sunday brunch, guest checkout, honeymoon departure..." onchange="saveSchedNote('sun',this.value)" id="sn-sun"></textarea></div></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 6 · HOTEL BLOCK                                    -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-hotel">
+
+  <div class="card">
+    <div class="card-title">🏨 Hotel Room Block</div>
+    <p class="card-note">A room block reserves a set of rooms at a negotiated rate for your guests. Most hotels require blocks 6–12 months in advance.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:8px;">
+      <div class="form-group"><label>Hotel Name</label><input type="text" id="h-name" class="tbl-input" placeholder="Hotel name..." onchange="saveHotel()"></div>
+      <div class="form-group"><label>Address</label><input type="text" id="h-addr" class="tbl-input" placeholder="Address..." onchange="saveHotel()"></div>
+      <div class="form-group"><label>Phone</label><input type="text" id="h-phone" class="tbl-input" placeholder="Hotel phone..." onchange="saveHotel()"></div>
+      <div class="form-group"><label>Contact Name</label><input type="text" id="h-contact" class="tbl-input" placeholder="Sales manager name..." onchange="saveHotel()"></div>
+      <div class="form-group"><label>Block Code / Group Name</label><input type="text" id="h-code" class="tbl-input" placeholder="Group booking code..." onchange="saveHotel()"></div>
+      <div class="form-group"><label>Rate per Night</label><input type="text" id="h-rate" class="tbl-input" placeholder="$___/night" onchange="saveHotel()"></div>
+      <div class="form-group"><label>Rooms Reserved</label><input type="number" id="h-rooms" class="tbl-input" placeholder="# of rooms" onchange="saveHotel()"></div>
+      <div class="form-group"><label>Cut-off Date</label><input type="date" id="h-cutoff" class="tbl-input" onchange="saveHotel()"></div>
+      <div class="form-group"><label>Check-in Date</label><input type="date" id="h-checkin" class="tbl-input" onchange="saveHotel()"></div>
+      <div class="form-group"><label>Check-out Date</label><input type="date" id="h-checkout" class="tbl-input" onchange="saveHotel()"></div>
+    </div>
+    <div class="form-group"><label>Booking Link / Instructions for Guests</label><textarea id="h-link" class="tbl-input" rows="2" placeholder="URL or instructions to share with guests..." onchange="saveHotel()"></textarea></div>
+    <div class="form-group"><label>Notes</label><textarea id="h-notes" class="tbl-input" rows="2" placeholder="Any other details..." onchange="saveHotel()"></textarea></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 Hotel Block To-Do</div>
+    <div id="hotel-tasks"></div>
+  </div>
+
+  <!-- Second Hotel -->
+  <div class="card">
+    <div class="card-title">🏨 Second Hotel (optional)</div>
+    <p class="card-note">Many couples block rooms at two price-point hotels to accommodate all budgets.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+      <div class="form-group"><label>Hotel Name</label><input type="text" id="h2-name" class="tbl-input" placeholder="Hotel name..." onchange="saveHotel2()"></div>
+      <div class="form-group"><label>Rate per Night</label><input type="text" id="h2-rate" class="tbl-input" placeholder="$___/night" onchange="saveHotel2()"></div>
+      <div class="form-group"><label>Rooms Reserved</label><input type="number" id="h2-rooms" class="tbl-input" placeholder="# of rooms" onchange="saveHotel2()"></div>
+      <div class="form-group"><label>Cut-off Date</label><input type="date" id="h2-cutoff" class="tbl-input" onchange="saveHotel2()"></div>
+    </div>
+    <div class="form-group"><label>Booking Link / Notes</label><textarea id="h2-notes" class="tbl-input" rows="2" placeholder="Details..." onchange="saveHotel2()"></textarea></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 7 · VENDORS                                        -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-vendors">
+
+  <div class="card">
+    <div class="card-title">📋 Vendor Tracker</div>
+    <p class="card-note">Green border = confirmed · Orange = in progress · Gray = TBD. Click any field to edit.</p>
+  </div>
+
+  <div class="vendor-grid">
+
+    <div class="vendor-card confirmed">
+      <div class="vendor-name">Lilly Creek Farm Events</div>
+      <div class="vendor-type">📍 Venue</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-confirmed">Confirmed ✓</span></div>
+      <div class="vendor-row"><strong>Address:</strong> 1654 Auraria Rd, GA</div>
+      <div class="vendor-row"><strong>Phone:</strong> 770-262-2374</div>
+      <div class="vendor-row"><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d5b9bcb9b9acb6a7b0b0beb3b4a7b8b0a3b0bba1a695b2b8b4bcb9fbb6bab8">[email&#160;protected]</a></div>
+      <div class="vendor-row"><strong>Invoice:</strong> #879 · $40,674.00</div>
+      <div class="vendor-row"><strong>Terms:</strong> 90-60-30 days before</div>
+    </div>
+
+    <div class="vendor-card pending">
+      <div class="vendor-name">Shelby Norris Photography</div>
+      <div class="vendor-type">📸 Photographer</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-pending">Contract Pending</span></div>
+      <div class="vendor-row"><strong>Payment:</strong> 30% at signing, 30% at 6mo, balance 2wks prior</div>
+      <div class="vendor-row"><strong>Delivery:</strong> Online gallery 4–6 weeks post-wedding</div>
+      <div class="vendor-row"><strong>Re-editing:</strong> $250/hr after delivery</div>
+      <div class="vendor-row"><strong>Notes:</strong> <input class="tbl-input" placeholder="Package chosen, price..." id="v-photo-notes" onchange="saveVendorNote('photo',this.value)"></div>
+    </div>
+
+    <div class="vendor-card confirmed">
+      <div class="vendor-name">DJ (Included)</div>
+      <div class="vendor-type">🎵 DJ / Entertainment</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-confirmed">Included in Venue</span></div>
+      <div class="vendor-row"><strong>Package:</strong> Ultimate DJ Package</div>
+      <div class="vendor-row"><strong>Time:</strong> 6 hours</div>
+      <div class="vendor-row"><strong>Includes:</strong> Ceremony setup, lapel mic, cocktail hour, DMX uplighting, dance floor</div>
+      <div class="vendor-row"><strong>Notes:</strong> <input class="tbl-input" placeholder="DJ name, song requests..." id="v-dj-notes" onchange="saveVendorNote('dj',this.value)"></div>
+    </div>
+
+    <div class="vendor-card pending">
+      <div class="vendor-name">Catering — TBD</div>
+      <div class="vendor-type">🍽️ Caterer</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-pending">Choose One</span></div>
+      <div class="vendor-row"><strong>Option A:</strong> Sabrosa Catering</div>
+      <div class="vendor-row"><strong>Option B:</strong> Tams Backstage</div>
+      <div class="vendor-row"><strong>Included:</strong> 150 guests buffet · $85/person extra</div>
+      <div class="vendor-row"><strong>Choice:</strong> <select class="tbl-select" id="v-caterer" onchange="saveVendorNote('caterer',this.value)"><option value="">— Select —</option><option>Sabrosa Catering</option><option>Tams Backstage</option></select></div>
+    </div>
+
+    <div class="vendor-card confirmed">
+      <div class="vendor-name">Florist (Included)</div>
+      <div class="vendor-type">🌹 Florals</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-confirmed">Included in Venue</span></div>
+      <div class="vendor-row"><strong>Allotment:</strong> $2,000</div>
+      <div class="vendor-row"><strong>Includes:</strong> Bouquets, boutonnieres + additional selections</div>
+      <div class="vendor-row"><strong>Notes:</strong> <input class="tbl-input" placeholder="Florist name, style preferences..." id="v-floral-notes" onchange="saveVendorNote('floral',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Officiant / Minister</div>
+      <div class="vendor-type">💍 Officiant</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Name:</strong> <input class="tbl-input" placeholder="Name..." id="v-offic-name" onchange="saveVendorNote('offic',this.value)"></div>
+      <div class="vendor-row"><strong>Phone:</strong> <input class="tbl-input" placeholder="Phone..." id="v-offic-phone" onchange="saveVendorNote('offic_ph',this.value)"></div>
+      <div class="vendor-row"><strong>Cost:</strong> <input class="tbl-input" placeholder="$..." id="v-offic-cost" onchange="saveVendorNote('offic_cost',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Hair &amp; Makeup</div>
+      <div class="vendor-type">💄 Beauty</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Artist:</strong> <input class="tbl-input" placeholder="Name..." id="v-hmu-name" onchange="saveVendorNote('hmu',this.value)"></div>
+      <div class="vendor-row"><strong>Phone:</strong> <input class="tbl-input" placeholder="Phone..." id="v-hmu-phone" onchange="saveVendorNote('hmu_ph',this.value)"></div>
+      <div class="vendor-row"><strong>Cost:</strong> <input class="tbl-input" placeholder="$..." id="v-hmu-cost" onchange="saveVendorNote('hmu_cost',this.value)"></div>
+      <div class="vendor-row"><strong>Trial Date:</strong> <input type="date" class="tbl-input" id="v-hmu-trial" onchange="saveVendorNote('hmu_trial',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Videographer</div>
+      <div class="vendor-type">🎬 Video</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Name:</strong> <input class="tbl-input" placeholder="Name..." id="v-vid-name" onchange="saveVendorNote('vid',this.value)"></div>
+      <div class="vendor-row"><strong>Cost:</strong> <input class="tbl-input" placeholder="$..." id="v-vid-cost" onchange="saveVendorNote('vid_cost',this.value)"></div>
+      <div class="vendor-row"><strong>Notes:</strong> <input class="tbl-input" placeholder="Package details..." id="v-vid-notes" onchange="saveVendorNote('vid_notes',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Wedding Dress</div>
+      <div class="vendor-type">👗 Bridal</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Boutique:</strong> <input class="tbl-input" placeholder="Store name..." id="v-dress-shop" onchange="saveVendorNote('dress',this.value)"></div>
+      <div class="vendor-row"><strong>Cost:</strong> <input class="tbl-input" placeholder="$..." id="v-dress-cost" onchange="saveVendorNote('dress_cost',this.value)"></div>
+      <div class="vendor-row"><strong>Fitting Dates:</strong> <input class="tbl-input" placeholder="Appointment dates..." id="v-dress-fit" onchange="saveVendorNote('dress_fit',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Rehearsal Dinner Venue</div>
+      <div class="vendor-type">🍽️ Thursday Dinner</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Venue:</strong> <input class="tbl-input" placeholder="Restaurant/venue..." id="v-reh-venue" onchange="saveVendorNote('reh',this.value)"></div>
+      <div class="vendor-row"><strong>Time:</strong> <input class="tbl-input" placeholder="Time..." id="v-reh-time" onchange="saveVendorNote('reh_time',this.value)"></div>
+      <div class="vendor-row"><strong>Cost:</strong> <input class="tbl-input" placeholder="$..." id="v-reh-cost" onchange="saveVendorNote('reh_cost',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Friday Night Event</div>
+      <div class="vendor-type">🎉 Post-Rehearsal Gathering</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Venue/Type:</strong> <input class="tbl-input" placeholder="Bar, bonfire, party..." id="v-fri-venue" onchange="saveVendorNote('fri',this.value)"></div>
+      <div class="vendor-row"><strong>Time:</strong> <input class="tbl-input" placeholder="Time..." id="v-fri-time" onchange="saveVendorNote('fri_time',this.value)"></div>
+      <div class="vendor-row"><strong>Notes:</strong> <input class="tbl-input" placeholder="Details..." id="v-fri-notes" onchange="saveVendorNote('fri_notes',this.value)"></div>
+    </div>
+
+    <div class="vendor-card tbd">
+      <div class="vendor-name">Honeymoon</div>
+      <div class="vendor-type">✈️ Travel</div>
+      <div class="vendor-row"><strong>Status:</strong> <span class="badge b-tbd">TBD</span></div>
+      <div class="vendor-row"><strong>Destination:</strong> <input class="tbl-input" placeholder="Where to?..." id="v-honey-dest" onchange="saveVendorNote('honey',this.value)"></div>
+      <div class="vendor-row"><strong>Dates:</strong> <input class="tbl-input" placeholder="Travel dates..." id="v-honey-dates" onchange="saveVendorNote('honey_dates',this.value)"></div>
+      <div class="vendor-row"><strong>Budget:</strong> <input class="tbl-input" placeholder="$..." id="v-honey-cost" onchange="saveVendorNote('honey_cost',this.value)"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  TAB 8 · FINANCE (LOCKED)                               -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="tab-pane" id="tab-finance">
+  <div class="lock-screen" id="lock-screen">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-title">Private Finance Area</div>
+    <div class="lock-sub">Enter the password to access budget &amp; payment tracking</div>
+    <input class="pw-input" type="password" id="pw-input" placeholder="••••••••••" onkeydown="if(event.key==='Enter')checkPw()">
+    <div class="pw-err" id="pw-err">Incorrect password. Try again.</div>
+    <button class="btn" onclick="checkPw()">🔓 Unlock</button>
+  </div>
+  <div class="finance-content" id="finance-content">
+
+    <!-- Cost Breakdown Summary -->
+    <div class="card" style="padding:0;overflow:hidden;margin-bottom:0;">
+      <div style="padding:16px 20px 10px;"><div class="card-title" style="margin-bottom:2px;">📊 Cost Summary</div></div>
+      <div id="fin-breakdown-table" style="padding:0 16px 16px;"></div>
+    </div>
+
+    <!-- Budget Summary -->
+    <div class="stats-grid">
+      <div class="stat o"><span class="stat-n" id="fin-total-budget">--</span><span class="stat-l">Total Budget</span></div>
+      <div class="stat p"><span class="stat-n" id="fin-committed">--</span><span class="stat-l">Committed</span></div>
+      <div class="stat g"><span class="stat-n" id="fin-paid">--</span><span class="stat-l">Total Paid</span></div>
+      <div class="stat"><span class="stat-n" id="fin-remaining">--</span><span class="stat-l">Still Due</span></div>
+    </div>
+
+    <!-- Budget Input -->
+    <div class="card">
+      <div class="card-title">💰 Total Budget</div>
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <label style="font-weight:700;color:var(--purple);">Overall Budget: $</label>
+        <input type="number" class="tbl-input" style="max-width:180px;" id="fin-budget-input" placeholder="Enter total budget..." onchange="saveFinance()">
+        <span style="font-size:.85em;color:var(--text-light);">Lilly Creek total alone: $40,674</span>
+      </div>
+    </div>
+
+    <!-- Payment Schedule -->
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div style="padding:20px 20px 12px;"><div class="card-title" style="margin-bottom:4px;">📅 Payment Schedule</div>
+      <p class="card-note">Track every payment — when it's due, what was paid, and how.</p></div>
+      <div class="pay-grid hdr">
+        <div>Vendor / Description</div><div>Amount Due</div><div>Due Date</div><div>Paid Amount</div><div>Method</div><div>Done</div>
+      </div>
+      <div id="payment-rows"></div>
+      <div style="padding:12px 16px;">
+        <button class="btn btn-sm btn-outline" onclick="addPaymentRow()">➕ Add Payment</button>
+      </div>
+    </div>
+
+
+    <!-- Extra Costs Calculator -->
+    <div class="card" style="padding:0;overflow:hidden;">
+      <div style="padding:20px 20px 12px;">
+        <div class="card-title" style="margin-bottom:4px;">🧮 Extra Costs Calculator</div>
+        <p class="card-note">Calculate potential extras beyond the base package. These feed into your totals above.</p>
+      </div>
+      <div class="fin-extra-row hdr"><div>Extra Item</div><div>Qty / Notes</div><div>Subtotal</div></div>
+
+      <div class="calc-row">
+        <label>👥 Extra guests (over 150 included) × $85/person</label>
+        <input type="number" class="tbl-input" style="width:80px;" id="ex-guests" value="0" min="0" oninput="calcExtras()"> guests
+        <span class="calc-result" id="ex-guests-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>🪑 Wood chair upgrade at ceremony × $5/chair</label>
+        <input type="number" class="tbl-input" style="width:80px;" id="ex-chairs" value="0" min="0" oninput="calcExtras()"> chairs
+        <span class="calc-result" id="ex-chairs-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>✨ Extra marquee letters (beyond 4 included) × $50 each</label>
+        <input type="number" class="tbl-input" style="width:80px;" id="ex-letters" value="0" min="0" oninput="calcExtras()"> letters
+        <span class="calc-result" id="ex-letters-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>🌹 Floral overage (beyond $2,000 allotment)</label>
+        $<input type="number" class="tbl-input" style="width:90px;" id="ex-floral" value="0" min="0" oninput="calcExtras()">
+        <span class="calc-result" id="ex-floral-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>🎂 Cake/dessert overage (beyond $750 allotment)</label>
+        $<input type="number" class="tbl-input" style="width:90px;" id="ex-cake" value="0" min="0" oninput="calcExtras()">
+        <span class="calc-result" id="ex-cake-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>💳 Credit card processing fee (3% of Lilly Creek total)</label>
+        <span style="font-size:.85em;color:var(--text-light);">auto-calculated</span>
+        <span class="calc-result" id="ex-cc-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>📸 Photography re-editing fee ($250/hr)</label>
+        <input type="number" class="tbl-input" style="width:80px;" id="ex-photoedit" value="0" min="0" oninput="calcExtras()"> hours
+        <span class="calc-result" id="ex-photoedit-total">$0</span>
+      </div>
+      <div class="calc-row">
+        <label>🎁 Other extra costs</label>
+        $<input type="number" class="tbl-input" style="width:90px;" id="ex-other" value="0" min="0" oninput="calcExtras()">
+        <input type="text" class="tbl-input" style="width:150px;" id="ex-other-desc" placeholder="Description...">
+        <span class="calc-result" id="ex-other-total">$0</span>
+      </div>
+
+      <div style="background:var(--purple-light);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:700;">
+        <span style="color:var(--purple);">📊 Total Extras</span>
+        <span style="font-size:1.2em;color:var(--orange);" id="ex-grand-total">$0</span>
+      </div>
+      <div style="padding:8px 16px 14px;">
+        <p style="font-size:.78em;color:var(--text-light);">💡 Add extras to your payment tracker above to include them in your total committed amount.</p>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="card">
+      <div class="card-title">📝 Finance Notes</div>
+      <textarea class="tbl-input" rows="5" style="width:100%;font-size:.9em;" id="fin-notes" placeholder="Budget notes, vendor negotiations, important payment reminders..." onchange="saveFinance()"></textarea>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  ADD GUEST MODAL (shell)                                -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="add-guest-modal">
+  <div class="modal">
+    <div class="modal-title">➕ Add Guest</div>
+    <div class="form-group"><label>Full Name</label><input type="text" id="ag-name" placeholder="First Last"></div>
+    <div class="form-group"><label>Group / Relationship</label>
+      <select id="ag-group">
+        <option>Wedding Party</option><option>Bridesmaids</option><option>Groomsmen</option>
+        <option>Alyssa Family</option><option>Max Family</option><option>Alyssa Friends</option>
+        <option>Max Friends</option><option>Max Family Friends</option><option>Peyton's Friends</option>
+        <option>SK/JK Friends</option><option>Seth Work</option><option>Plus 1</option><option>Unknown</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Host</label>
+      <select id="ag-side"><option value="">—</option><option value="Alyssa">Alyssa 🌸</option><option value="Max">Max 🏈</option></select>
+    </div>
+    <div class="form-group"><label>RSVP Status</label>
+      <select id="ag-rsvp"><option value="Unknown">Unknown</option><option value="Yes">Yes ✓</option><option value="No">No ✗</option><option value="Maybe">Maybe</option></select>
+    </div>
+    <div class="form-group"><label>Count</label><input type="number" id="ag-count" value="1" min="0" max="10"></div>
+    <div class="form-group"><label>Notes</label><input type="text" id="ag-notes" placeholder="Optional notes..."></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('add-guest-modal')">Cancel</button>
+      <button class="btn btn-sm" onclick="saveNewGuest()">Save Guest</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Footer -->
+<footer style="text-align:center;padding:28px 20px;color:var(--text-light);font-size:.82em;border-top:2px solid var(--border);margin-top:40px;">
+  💍 Max &amp; Alyssa · May 1, 2027 · Lilly Creek Farm · Made with ❤️ &amp; 🐾 Go Tigers!
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  CORE JAVASCRIPT                                        -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── TAB SWITCHING ─────────────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('tb-' + name).classList.add('active');
+  // Store active tab in sessionStorage only (no need to sync this cross-device)
+  if (name !== 'finance') sessionStorage.setItem('ma_activeTab', name);
+}
+
+// ── COUNTDOWN TIMER ───────────────────────────────────────
+function updateCountdown() {
+  const wedding = new Date('2027-05-01T17:00:00');
+  const now = new Date();
+  const diff = wedding - now;
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML = '<div class="cd-unit"><span class="cd-num">🎉</span><span class="cd-lbl">Today!</span></div>';
+    return;
+  }
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000) / 60000);
+  const secs  = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent  = days;
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── PASSWORD CHECK ────────────────────────────────────────
+function checkPw() {
+  const val = document.getElementById('pw-input').value;
+  const err = document.getElementById('pw-err');
+  if (val === 'hmitwg2c?') {
+    document.getElementById('lock-screen').style.display = 'none';
+    document.getElementById('finance-content').classList.add('unlocked');
+    sessionStorage.setItem('ma_fin_unlocked', '1');
+    err.style.display = 'none';
+  } else {
+    err.style.display = 'block';
+    document.getElementById('pw-input').value = '';
+    document.getElementById('pw-input').focus();
+  }
+}
+
+// Re-unlock on page reload if already unlocked this session
+if (sessionStorage.getItem('ma_fin_unlocked') === '1') {
+  document.getElementById('lock-screen').style.display = 'none';
+  document.getElementById('finance-content').classList.add('unlocked');
+}
+
+// ── MODAL HELPERS ─────────────────────────────────────────
+function openModal(id)  { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+});
+
+// ── TOAST ─────────────────────────────────────────────────
+function toast(msg, ms = 2400) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), ms);
+}
+
+// ── RESTORE LAST TAB ──────────────────────────────────────
+const lastTab = sessionStorage.getItem('ma_activeTab');
+if (lastTab && lastTab !== 'finance') showTab(lastTab);
+
+// ── ASYNC INIT — loads all data from Firebase ─────────────
+async function initApp() {
+  // Show a subtle loading indicator
+  document.body.style.opacity = '0.7';
+  try {
+    await Promise.all([
+      loadGuests(),
+      loadChecklist(),
+      loadFinance(),
+      loadHotel(),
+      loadVenueDecisions(),
+      loadSchedNotes(),
+      loadVendorNotes(),
+      loadPkgToggles(),
+      loadCateringInfo(),
+      loadExtras(),
+    ]);
+    renderGuests();
+    renderChecklist();
+    renderPayments();
+    renderHotelTasks();
+    updateDashboard();
+  } catch(e) {
+    console.error('Init error:', e);
+    toast('⚠️ Could not connect to Firebase. Check your config.');
+  }
+  document.body.style.opacity = '1';
+}
+
+// ── REMOTE DATA HANDLER (real-time listener) ──────────────
+// Called when another user saves data — silently updates UI
+function applyRemoteData(d) {
+  if (d.guests)          { guests = d.guests; renderGuests(); updateDashboard(); }
+  if (d.checklist)       { checklistState = d.checklist; renderChecklist(); updateChecklistProgress(); }
+  if (d.finance)         { payments = d.finance.payments || payments; finBudget = d.finance.budget || 0; finNotes = d.finance.notes || ''; renderPayments(); }
+  if (d.hotel)           { hotelState = d.hotel.tasks || {}; restoreHotelFields(d.hotel); renderHotelTasks(); }
+  if (d.venueDecisions)  { venueDecisions = d.venueDecisions; loadVenueDecisions(); }
+  if (d.pkgToggles)      { pkgToggles = d.pkgToggles; loadPkgToggles(); }
+  if (d.catering)        { loadCateringInfo(); }
+  toast('🔄 Updated by another user');
+}
+window.applyRemoteData = applyRemoteData;
+
+// initApp is triggered by tryInit() in the Firebase module script above
+
+// ═══════════════════════════════════════════════════════════
+// GUEST DATA  [id, name, group, side, rsvp, count, thankYou, rehearsal, notes]
+// ═══════════════════════════════════════════════════════════
+const GUEST_DEFAULTS = [
+  [1,"Alyssa Katz","Wedding Party","Alyssa","Unknown",0,false,true,"","Yes"],
+  [2,"Max Sasnett","Wedding Party","Max","Unknown",0,false,true,"","Yes"],
+  [3,"Julie Katz","Wedding Party","Alyssa","Unknown",0,false,true,"","Yes"],
+  [4,"Seth Katz","Wedding Party","Alyssa","Unknown",0,false,true,"","Yes"],
+  [5,"Brooke Katz","Wedding Party","Alyssa","Unknown",0,false,true,"","Yes"],
+  [6,"Peyton Sasnett","Wedding Party","Max","Unknown",0,false,true,"","Yes"],
+  [7,"Joy Fairey","Wedding Party","Max","Unknown",0,false,true,"","Yes"],
+  [8,"James Fairey","Wedding Party","Max","Unknown",0,false,true,"","Yes"],
+  [9,"Will Barrett","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [10,"Jess Frey","Bridesmaids","Alyssa","Unknown",0,false,true,"","Yes"],
+  [11,"Jess plus one","Plus 1","Alyssa","Unknown",0,false,false,"","Yes"],
+  [12,"Ella Cabe","Bridesmaids","Alyssa","Unknown",0,false,true,"","Yes"],
+  [13,"Ella Cabe plus one","Plus 1","Alyssa","Unknown",0,false,false,"","Yes"],
+  [14,"Emma Polemeni","Bridesmaids","Alyssa","Unknown",0,false,true,"","Yes"],
+  [15,"Emma plus one","Plus 1","Alyssa","Unknown",0,false,false,"","Yes"],
+  [16,"Shelby McCrum","Bridesmaids","Alyssa","Unknown",0,false,true,"","Yes"],
+  [17,"Katie Pelot","Bridesmaids","Alyssa","Unknown",0,false,true,"Bail??","Yes"],
+  [18,"Katie plus one","Plus 1","Alyssa","Unknown",0,false,false,"","Yes"],
+  [19,"Ava Graham","Bridesmaids","Alyssa","Unknown",0,false,true,"","Yes"],
+  [20,"Wallace Bruner","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [21,"Jones Bruner","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [22,"Henry Bruner","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [23,"Jake Satchel","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [24,"Mason Satchel","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [25,"Bryce Phillips","Groomsmen","Max","Unknown",0,false,true,"","Yes"],
+  [26,"Michelle McCrum","Alyssa Family","Alyssa","Unknown",0,false,false,"Yes?","Yes"],
+  [27,"Todd McCrum","Alyssa Family","Alyssa","Unknown",0,false,false,"Yes?","Yes"],
+  [28,"Beth Pelot","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [29,"Kelly Bibby","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [30,"Travis (Beth plus one)","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [31,"Victor Bibby","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [32,"Judi Newman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [33,"Don Newman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [34,"Max Newman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [35,"Max Newman plus one","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [36,"Jodi Newcomer","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [37,"John Newcomer","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [38,"Michael Newcomer","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [39,"Michael Newcomer plus one","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [40,"Meghan Newcomer","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [41,"Zach Groendyk","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [42,"Brittany NewKane","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [43,"Jenna NewKane","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [44,"Blyss Splane","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [45,"Patrick Splane","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [46,"Jeff Rott","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [47,"Delaine Rott","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [48,"Jake Rott","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [49,"Korie Rott","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [50,"Walker Rott","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [51,"Walker Rott plus one","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [52,"Olivia Galizia","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [53,"Michele Lederman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [54,"Rob Lederman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [55,"Justin Lederman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [56,"Samantha Lederman","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [57,"Kristen Ryals","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [58,"Darius Ryals","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [59,"Jamison Ryals","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [60,"Stacey Shapiro","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [61,"Eric Shapiro","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [62,"Zoe Shapiro","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [63,"Zoe Shapiro plus one","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [64,"Ben Shapiro","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [65,"Ben Shapiro plus one","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [66,"Ferne Katz","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [67,"Russ Burke","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [68,"Dean Chasky","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [69,"Susan Chasky","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [70,"Zach Chasky","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [71,"Zach Chasky wife","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [72,"James Davis","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [73,"Teri Davis","Alyssa Family","Alyssa","Unknown",0,false,false,"","Yes"],
+  [74,"Amanda Morcelo","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [75,"Amanda Morcelo plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [76,"Emily Watts","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [77,"Emily Watts plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [78,"Katie Salsbury","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [79,"Katie Salsbury plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [80,"Lanie Hopkins","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [81,"Lanie Hopkins plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [82,"Kaylia Gause","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [83,"Kaylia Gause plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [84,"Stephanie Peters","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [85,"Timothy Peters","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [86,"Sativa","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [87,"Sativa plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [88,"Kassidy Corsa","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [89,"Tyler Corsa","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [90,"Cameron Jones","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [91,"Cameron Jones plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [92,"Ava Azzarello","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [93,"Ava Azzarello plus one","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [94,"Mattie Reeves","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [95,"Ethan Reeves","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [96,"Kat","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [97,"JT","Alyssa Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [98,"Robby Robinson","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [99,"Sandy Robinson","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [100,"Scott Manspeaker","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [101,"Kim Manspeaker","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [102,"Gracey Manspeaker","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [103,"Gavin Manspeaker","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [104,"Andrew Mintz","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [105,"Leslie Mintz","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [106,"Alan Mintz","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [107,"Roni Mintz","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [108,"Jeff Terry","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [109,"Stacey Terry","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [110,"Ron Lewis","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [111,"Kara Lewis","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [112,"Andrew Oxley","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [113,"Traci Oxley","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [114,"Joey West","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [115,"Meredith West","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [116,"Andrew Green","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [117,"Kristen Green","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [118,"Eric Grabau","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [119,"Joan Grabau","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [120,"Heidi Augustine","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [121,"Scott Augustine","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [122,"Jake Bowron","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [123,"Carla Bowron","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [124,"Britton Bowron","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [125,"Nia Bowron","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [126,"Mabry Bowron","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [127,"David Cottam","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [128,"Becky Moore","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [129,"Andrew Rosen","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [130,"Adiela Rosen","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [131,"Wallace plus one","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [132,"Mary Brooks Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [133,"Bill Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [134,"Denise Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [135,"Kristy (Henry plus one)","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [136,"Hank Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [137,"John Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [138,"Ashley Maroney","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [139,"Chris Maroney","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [140,"Jimmy Blackstock","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [141,"Dan Plowden","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [142,"Molly Racthford","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [143,"Randy Racthford","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [144,"Slade","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [145,"Louis Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [146,"Brenda Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [147,"Sheryll Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [148,"William Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [149,"Debrah Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [150,"William Middleton Jr","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [151,"Sarah Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [152,"Chris Middleton","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [153,"Ben Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [154,"Kaitlyn Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [155,"Callum Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [156,"Harrison Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [157,"Michael Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [158,"Caleb Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [159,"Maddie Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [160,"Joyce Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [161,"James Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [162,"James Bruner plus one","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [163,"Jessica","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [164,"Daniel","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [165,"Bonnie Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [166,"Thomas Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [167,"JD Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [168,"Daine Bruner","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [169,"Bob Battle","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [170,"Allison Satchel","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [171,"Allison Satchel plus one","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [172,"Jake Satchel plus one","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [173,"Mason Satchel plus one","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [174,"Taber Cathcart","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [175,"Taber Cathcart plus one","Max Family","Max","Unknown",0,false,false,"","Yes"],
+  [176,"Kevin Tinch","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [177,"Emily Tinch","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [178,"Caroline Tinch","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [179,"Helen Tinch","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [180,"Rob Robertson","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [181,"Meredith Robertson","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [182,"McCrae Robertson","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [183,"Robert Donovan","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [184,"Debbie Donovan","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [185,"Michael Morris","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [186,"Jean Morris","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [187,"Bradley Muller","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [188,"Katherine Muller","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [189,"Rhonwen Newton","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [190,"Ned Lipscomb","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [191,"Ned Lipscomb wife","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [192,"Diane Fairey","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [193,"Robby Fairey","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [194,"Stacy Fairey","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [195,"Vein","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [196,"Jeffrey Smythe","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [197,"Andrew Smythe","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [198,"Michael Smythe","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [199,"Julie Smythe","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [200,"Julie Smythe husband","Max Family Friends","Max","Unknown",0,false,false,"","Yes"],
+  [201,"Alex Weinstroer","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [202,"Merideth (Alex plus one)","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [203,"Cameron Fishburne","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [204,"Cameron Fishburne GF","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [205,"Parker Long","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [206,"Parker Long wife","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [207,"Evan Bologna","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [208,"Evan Bologna plus one","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [209,"Bryce Phillips plus one","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [210,"Stacey Phillips","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [211,"Bill Phillips","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [212,"Payton Phillips","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [213,"Cami Phillips","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [214,"Nick Hyde","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [215,"Paul Payne","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [216,"Nate Eberling","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [217,"Hayden Lewis","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [218,"Bobby Robards","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [219,"Tate Hughes","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [220,"CJ Simmons","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [221,"Alec Falzone","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [222,"Caleb Pierce","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [223,"Frederick Griffith James","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [224,"Myriee Graham","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [225,"Myriee Graham husband","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [226,"Amanda Riccibono","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [227,"Darlene Piccolo","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [228,"Darden Couch","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [229,"Lisa (Darden plus one)","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [230,"Eddie McGill","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [231,"Eddie McGill wife","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [232,"Steve Villoux","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [233,"Steve Villoux wife","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [234,"Jason Pye","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [235,"Jason Pye wife","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [236,"Matt Allen","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [237,"Matt Allen wife","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [238,"Mike Perrone","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [239,"Mike Perrone wife","Max Friends","Max","Unknown",0,false,false,"","Yes"],
+  [240,"Joseph Pope","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [241,"Pamela Pope","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [242,"Willet Richter","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [243,"Kelley Richter","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [244,"Charles Roman","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [245,"Helen Roman","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [246,"Harrison Saunders","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [247,"Harrison Saunders plus one","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [248,"Allen Sikes","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [249,"Karen Sikes","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [250,"Todd Beasley","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [251,"Amy Beasley","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [252,"Anne Weston","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [253,"Christian Weston","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [254,"Anne Wyman","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [255,"James Wyman","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [256,"Walker Milliken","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [257,"Caroline Milliken","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
+  [258,"Ron Gabbai","Unknown","","Unknown",0,false,false,"","Yes"],
+  [259,"Elayne Gabbai","Unknown","","Unknown",0,false,false,"","Yes"],
+  [260,"Wendy Leaf","Unknown","","Unknown",0,false,false,"","Yes"],
+  [261,"Stuart Leaf","Unknown","","Unknown",0,false,false,"","Yes"],
+  [262,"Amy Rodriguez","Unknown","","Unknown",0,false,false,"","Yes"],
+  [263,"Ricky Rodriguez","Unknown","","Unknown",0,false,false,"","Yes"],
+  [264,"Toni Destefano","Unknown","","Unknown",0,false,false,"","Yes"],
+  [265,"Stacy Gerdes","Unknown","","Unknown",0,false,false,"","Yes"],
+  [266,"Jennifer Moran","Unknown","","Unknown",0,false,false,"","Yes"],
+  [267,"Todd Moran","Unknown","","Unknown",0,false,false,"","Yes"],
+  [268,"Karina Martinez","Unknown","","Unknown",0,false,false,"","Yes"],
+  [269,"Rachel Nowlin","Unknown","","Unknown",0,false,false,"","Yes"],
+  [270,"Allyson Reeves","Unknown","","Unknown",0,false,false,"","Yes"],
+  [271,"Melanie Abernathy","Unknown","","Unknown",0,false,false,"","Yes"]
+];
+
+// Guest fields: [id, name, group, side, rsvp, count, thankYou, rehearsal, notes]
+let guests = [];
+const G = {ID:0,NAME:1,GROUP:2,SIDE:3,RSVP:4,COUNT:5,TY:6,REH:7,NOTES:8,INV:9};
+
+const DATA_VER = 3;
+async function loadGuests() {
+  const saved = await window.fbGet('guests');
+  if (saved && Array.isArray(saved)) { guests = saved; }
+  else { guests = GUEST_DEFAULTS.map(r=>[...r]); }
+}
+async function saveGuests() {
+  await window.fbSet('guests', guests);
+  updateDashboard();
+  if(typeof renderFinanceSummary==='function') renderFinanceSummary();
+}
+
+// Filters
+let gFilters = { side:'all', rsvp:'all', ty:'all', inv:'all' };
+let gSort = 'original';
+function setSort(val, btn) {
+  gSort = val;
+  document.querySelectorAll('[id^="sort-"]').forEach(b=>b.classList.remove('fa'));
+  if (btn) btn.classList.add('fa');
+  renderGuests();
+}
+
+function setFilter(type, val, btn) {
+  gFilters[type] = val;
+  const parent = btn.closest('.filter-bar');
+  parent.querySelectorAll('.f-btn').forEach(b => { b.classList.remove('fa','fp'); });
+  btn.classList.add('fa');
+  renderGuests();
+}
+
+function renderGuests() {
+  const search = (document.getElementById('gl-search')||{value:''}).value.toLowerCase();
+  const tbody = document.getElementById('guest-tbody');
+  if (!tbody) return;
+
+  const matchesFilters = g => {
+    if (gFilters.side !== 'all' && g[G.SIDE] !== gFilters.side) return false;
+    if (gFilters.rsvp !== 'all' && g[G.RSVP] !== gFilters.rsvp) return false;
+    if (gFilters.inv  !== 'all' && (g[G.INV]||'Yes') !== gFilters.inv) return false;
+    if (gFilters.ty === 'sent' && !g[G.TY]) return false;
+    if (gFilters.ty === 'unsent' && g[G.TY]) return false;
+    if (search && !g[G.NAME].toLowerCase().includes(search) && !g[G.GROUP].toLowerCase().includes(search)) return false;
+    return true;
+  };
+
+  const sideBadge = s => s === 'Alyssa' ? '<span class="badge b-alyssa">🌸 Alyssa</span>' : s === 'Max' ? '<span class="badge b-max">🏈 Max</span>' : '<span class="badge b-unknown">—</span>';
+
+  // Sort helper
+  const sortFn = (a, b) => {
+    if (gSort === 'lastname') {
+      const la = (a[G.NAME]||'').split(' ').pop().toLowerCase();
+      const lb = (b[G.NAME]||'').split(' ').pop().toLowerCase();
+      return la < lb ? -1 : la > lb ? 1 : 0;
+    }
+    if (gSort === 'side') return (a[G.SIDE]||'').localeCompare(b[G.SIDE]||'');
+    return 0; // original order
+  };
+
+  const guestRow = (g, i) => {
+    const inv = g[G.INV] || 'Yes';
+    const invColor = inv==='Yes' ? 'var(--success)' : inv==='Maybe' ? 'var(--warning)' : 'var(--danger)';
+    return `<tr style="${inv==='Remove'?'opacity:.45;':inv==='Maybe'?'opacity:.8;':''}">
+      <td style="color:var(--text-light);font-size:.8em;">${i+1}</td>
+      <td><input class="tbl-input" style="font-weight:700;min-width:120px;" value="${g[G.NAME]}" placeholder="Name..." onchange="updateGuest(${g[G.ID]},'name',this.value)"></td>
+      <td style="font-size:.82em;color:var(--text-light);">${g[G.GROUP]}</td>
+      <td>${sideBadge(g[G.SIDE])}</td>
+      <td>
+        <select class="tbl-select" style="border-color:${invColor};" onchange="updateGuest(${g[G.ID]},'inv',this.value)">
+          ${['Yes','Maybe','Remove'].map(v=>`<option value="${v}"${inv===v?' selected':''}>${v}</option>`).join('')}
+        </select>
+      </td>
+      <td>
+        <select class="tbl-select" onchange="updateGuest(${g[G.ID]},'rsvp',this.value)">
+          ${['Yes','No','Maybe','Unknown'].map(v=>`<option value="${v}"${g[G.RSVP]===v?' selected':''}>${v}</option>`).join('')}
+        </select>
+      </td>
+      <td><input type="number" class="tbl-input" style="width:52px;" value="${g[G.COUNT]}" min="0" max="10" onchange="updateGuest(${g[G.ID]},'count',+this.value)"></td>
+      <td style="text-align:center;"><input type="checkbox" style="accent-color:var(--orange);width:17px;height:17px;" ${g[G.TY]?'checked':''} onchange="updateGuest(${g[G.ID]},'ty',this.checked)"></td>
+      <td style="text-align:center;"><input type="checkbox" style="accent-color:var(--purple);width:17px;height:17px;" ${g[G.REH]?'checked':''} onchange="updateGuest(${g[G.ID]},'reh',this.checked)"></td>
+      <td><input class="tbl-input" value="${g[G.NOTES]}" placeholder="Notes..." onchange="updateGuest(${g[G.ID]},'notes',this.value)"></td>
+    </tr>`;
+  };
+
+  const sectionHeader = (label, color, count) =>
+    `<tr><td colspan="10" style="background:${color};padding:6px 12px;font-weight:700;font-size:.82em;text-transform:uppercase;letter-spacing:1px;color:#fff;">${label} (${count})</td></tr>`;
+
+  const invitedList  = guests.filter(g => (g[G.INV]||'Yes')==='Yes'  && matchesFilters(g)).sort(sortFn);
+  const maybeList    = guests.filter(g => (g[G.INV]||'Yes')==='Maybe' && matchesFilters(g)).sort(sortFn);
+  const removedList  = guests.filter(g => (g[G.INV]||'Yes')==='Remove'&& matchesFilters(g)).sort(sortFn);
+
+  let html = '';
+  if (invitedList.length || gFilters.inv === 'all' || gFilters.inv === 'Yes') {
+    if (invitedList.length) {
+      html += sectionHeader('✅ Invited', 'var(--purple)', invitedList.length);
+      html += invitedList.map((g,i) => guestRow(g, i+1)).join('');
+    }
+  }
+  if (maybeList.length) {
+    html += sectionHeader('❓ Possible Invitees', 'var(--gold)', maybeList.length);
+    html += maybeList.map((g,i) => guestRow(g, i+1)).join('');
+  }
+  if (removedList.length) {
+    html += sectionHeader('🗑️ Removed', '#90A4AE', removedList.length);
+    html += removedList.map((g,i) => guestRow(g, i+1)).join('');
+  }
+  tbody.innerHTML = html || '<tr><td colspan="10" style="text-align:center;padding:20px;color:var(--text-light);">No guests match the current filters.</td></tr>';
+
+  // Update venue package extra guest display
+  const activeCount = guests.filter(g=>(g[G.INV]||'Yes')==='Yes').length;
+  const confirmedCount = guests.filter(g=>g[G.RSVP]==='Yes').length;
+  const effectiveCount = confirmedCount > 0 ? confirmedCount : activeCount;
+  const extra = Math.max(0, effectiveCount - 150);
+  const extraCost = extra * 85;
+  const vpEl = document.getElementById('vp-extra-summary');
+  if (vpEl) {
+    if (effectiveCount > 150) {
+      vpEl.style.display = 'block';
+      const src = confirmedCount > 0 ? 'confirmed RSVPs' : 'invited guests';
+      vpEl.textContent = `👥 ${activeCount} invited · ${confirmedCount} accepted · ${extra} over the 150 included`;
+    } else {
+      vpEl.style.display = 'block';
+      vpEl.style.background = 'var(--success-bg)';
+      vpEl.style.color = 'var(--success)';
+      const src = confirmedCount > 0 ? 'confirmed' : 'invited';
+      vpEl.textContent = `👥 ${activeCount} invited · ${confirmedCount} accepted · within the 150 included ✓`;
+    }
+  }
+}
+
+function updateGuest(id, field, val) {
+  const g = guests.find(x=>x[G.ID]===id);
+  if (!g) return;
+  const map = {rsvp:G.RSVP, count:G.COUNT, ty:G.TY, reh:G.REH, notes:G.NOTES, inv:G.INV, name:G.NAME};
+  if (map[field]!==undefined) g[map[field]] = val;
+  saveGuests(); renderGuests();
+  toast('Saved ✓');
+}
+
+function saveNewGuest() {
+  const name = document.getElementById('ag-name').value.trim();
+  if (!name) { alert('Please enter a name.'); return; }
+  const newId = Math.max(...guests.map(g=>g[G.ID])) + 1;
+  guests.push([
+    newId,
+    name,
+    document.getElementById('ag-group').value,
+    document.getElementById('ag-side').value,
+    document.getElementById('ag-rsvp').value,
+    +document.getElementById('ag-count').value,
+    false, false,
+    document.getElementById('ag-notes').value
+  ]);
+  saveGuests(); renderGuests();
+  closeModal('add-guest-modal');
+  ['ag-name','ag-notes'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  toast('Guest added! 🌸');
+}
+
+function exportGuests() {
+  const header = 'Name,Group,Host,Invited,RSVP,Count,ThankYou,Rehearsal,Notes\n';
+  const rows = guests.map(g=>`"${g[G.NAME]}","${g[G.GROUP]}","${g[G.SIDE]}","${g[G.INV]||'Yes'}","${g[G.RSVP]}","${g[G.COUNT]}","${g[G.TY]?'Yes':'No'}","${g[G.REH]?'Yes':'No'}","${g[G.NOTES]}"`).join('\n');
+  const blob = new Blob([header+rows],{type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'max-alyssa-guests.csv';
+  a.click();
+  toast('CSV downloaded! 📥');
+}
+
+// ═══════════════════════════════════════════════════════════
+// CHECKLIST DATA
+// ═══════════════════════════════════════════════════════════
+const CHECKLIST = {
+  foundation:[
+    {id:'c1',text:'Set wedding date ✅ May 1, 2027',done:true,note:'Confirmed with Lilly Creek Farm'},
+    {id:'c2',text:'Book venue ✅ Lilly Creek Farm Events',done:true,note:'Invoice #879 · $40,674'},
+    {id:'c3',text:'Start guest list',done:true,note:''},
+    {id:'c4',text:'Set overall wedding budget',done:false,note:'',priority:'high'},
+    {id:'c5',text:'Announce engagement',done:false,note:''},
+    {id:'c6',text:'Create engagement announcement / social media post',done:false,note:''},
+    {id:'c7',text:'Choose wedding colors & overall theme',done:false,note:''},
+  ],
+  '12mo':[
+    {id:'c8',text:'Book photographer — Shelby Norris Photography (contract pending)',done:false,note:'30% deposit at signing · 30% due Nov 1 2026 · balance Apr 17 2027',priority:'high'},
+    {id:'c9',text:'Book officiant / minister',done:false,note:'',priority:'high'},
+    {id:'c10',text:'Dress shopping — start visiting boutiques',done:false,note:'',priority:'high'},
+    {id:'c11',text:'Book honeymoon destination',done:false,note:''},
+    {id:'c12',text:'Confirm bridal party (bridesmaids & groomsmen)',done:false,note:''},
+    {id:'c13',text:'Book hair & makeup artist',done:false,note:''},
+    {id:'c14',text:'Consider booking videographer',done:false,note:''},
+    {id:'c15',text:'Research rehearsal dinner venues',done:false,note:''},
+    {id:'c16',text:'Plan Friday night post-rehearsal event idea',done:false,note:''},
+    {id:'c17',text:'Order wedding rings / bands',done:false,note:''},
+  ],
+  '9mo':[
+    {id:'c18',text:'Create wedding website',done:false,note:''},
+    {id:'c19',text:'Send save-the-dates',done:false,note:''},
+    {id:'c20',text:'Book hotel room block(s)',done:false,note:'Aim for 6-12 months before the wedding',priority:'high'},
+    {id:'c21',text:'Choose catering company: Sabrosa or Tams Backstage',done:false,note:'Buffet included for 150 guests',priority:'med'},
+    {id:'c22',text:'Order bridesmaid dresses',done:false,note:''},
+    {id:'c23',text:'Choose & order groomsmen attire (suits/tuxes)',done:false,note:''},
+    {id:'c24',text:'Create gift registry',done:false,note:''},
+    {id:'c25',text:'Book rehearsal dinner venue',done:false,note:''},
+    {id:'c26',text:'Plan honeymoon details & book flights/hotels',done:false,note:''},
+    {id:'c27',text:'Schedule custom decor appointment with Lilly Creek',done:false,note:'Tablescapes, room layouts, ceremony selections'},
+    {id:'c28',text:'Review floral options (Lilly Creek $2,000 allotment)',done:false,note:''},
+  ],
+  '6mo':[
+    {id:'c29',text:'Design & order wedding invitations',done:false,note:''},
+    {id:'c30',text:'Shelby Norris Photography — 2nd payment (30%) due Nov 1 2026',done:false,note:'',priority:'high'},
+    {id:'c31',text:'Schedule cake tasting',done:false,note:'$750 allotment included'},
+    {id:'c32',text:'Finalize rehearsal dinner plans & guest list',done:false,note:''},
+    {id:'c33',text:'Schedule hair & makeup trial',done:false,note:''},
+    {id:'c34',text:'Plan bridal shower',done:false,note:''},
+    {id:'c35',text:'Plan bachelor & bachelorette parties',done:false,note:''},
+    {id:'c36',text:'Confirm DJ song preferences / do-not-play list',done:false,note:''},
+    {id:'c37',text:'Select 3 signature cocktails for bar',done:false,note:'30-day courtesy call will create shopping list',priority:'med'},
+    {id:'c38',text:'Decide on send-off option (fireworks/helicopter/getaway)',done:false,note:'',priority:'med'},
+    {id:'c39',text:'Decide on dance floor style (checkered or outdoor)',done:false,note:'',priority:'med'},
+    {id:'c40',text:'Choose marquee letter content (4 included)',done:false,note:'$50 per additional letter',priority:'med'},
+    {id:'c41',text:'Order wedding favors (if desired)',done:false,note:''},
+  ],
+  '3mo':[
+    {id:'c42',text:'Mail wedding invitations',done:false,note:'',priority:'high'},
+    {id:'c43',text:'Lilly Creek Farm — 1st payment (90 days out) ~Jan 30 2027',done:false,note:'',priority:'high'},
+    {id:'c44',text:'Schedule 1st in-person meeting with Lilly Creek coordinator',done:false,note:'Aisle Planner software setup'},
+    {id:'c45',text:'Confirm skeet shoot with Joe (706-974-8232)',done:false,note:'10am for groomsmen'},
+    {id:'c46',text:'Plan seating chart (start draft)',done:false,note:''},
+    {id:'c47',text:'Book farewell brunch for Sunday (optional)',done:false,note:''},
+    {id:'c48',text:'Confirm photobooth selections with Photofalia',done:false,note:'VW Bus · 3 hours · keepsake album'},
+    {id:'c49',text:'Create family photo shot list for photographer',done:false,note:'Required by Shelby Norris Photography'},
+    {id:'c50',text:'Schedule wood chair upgrade decision for ceremony',done:false,note:'$5/chair upgrade available'},
+  ],
+  '1mo':[
+    {id:'c51',text:'Send RSVP reminders to outstanding guests',done:false,note:'',priority:'high'},
+    {id:'c52',text:'Lilly Creek Farm — 2nd payment (60 days out) ~Mar 1 2027',done:false,note:'',priority:'high'},
+    {id:'c53',text:'Shelby Norris Photography — final balance due ~Apr 17 2027',done:false,note:'2 weeks before wedding',priority:'high'},
+    {id:'c54',text:'Lilly Creek Farm — 3rd payment (30 days out) ~Apr 1 2027',done:false,note:'All details finalized including final guest count',priority:'high'},
+    {id:'c55',text:'Final dress fitting',done:false,note:''},
+    {id:'c56',text:'Break in wedding shoes',done:false,note:''},
+    {id:'c57',text:'Schedule 2nd in-person meeting with Lilly Creek coordinator',done:false,note:'Finalize all wedding details'},
+    {id:'c58',text:'Confirm all vendor arrival times & day-of timeline',done:false,note:''},
+    {id:'c59',text:'Give Lilly Creek final confirmed guest count',done:false,note:'Additional guests: $85/person over 150'},
+    {id:'c60',text:'Prepare vendor tip envelopes',done:false,note:''},
+    {id:'c61',text:'Finalize seating chart',done:false,note:''},
+    {id:'c62',text:'Confirm Friday night event details',done:false,note:''},
+    {id:'c63',text:'Confirm rehearsal dinner final headcount',done:false,note:''},
+  ],
+  week:[
+    {id:'c64',text:'Pick up wedding dress',done:false,note:'',priority:'high'},
+    {id:'c65',text:'Prepare wedding day emergency kit',done:false,note:'Sewing kit, stain remover, pain reliever, etc.'},
+    {id:'c66',text:'Write vows (if personal)',done:false,note:''},
+    {id:'c67',text:'Confirm rehearsal time & all participants',done:false,note:''},
+    {id:'c68',text:'Send final day-of timeline to all vendors',done:false,note:''},
+    {id:'c69',text:'Confirm hotel room block details for guests',done:false,note:''},
+    {id:'c70',text:'Steam/press wedding attire',done:false,note:''},
+    {id:'c71',text:'Charge all devices & prepare bags',done:false,note:''},
+    {id:'c72',text:'Get a good night sleep! 💤',done:false,note:''},
+  ],
+  dayof:[
+    {id:'c73',text:'8:00 AM — Bridal party arrives at Lilly Creek Farm',done:false,note:''},
+    {id:'c74',text:'10:00 AM — Groomsmen skeet shoot (Joe 706-974-8232)',done:false,note:''},
+    {id:'c75',text:'Hair & makeup for bridal party',done:false,note:''},
+    {id:'c76',text:'First look photos (if planned)',done:false,note:''},
+    {id:'c77',text:'Ceremony',done:false,note:''},
+    {id:'c78',text:'Cocktail hour — patio, cornhole, bar, photobooth',done:false,note:''},
+    {id:'c79',text:'Reception (6 hours, ends by 10 PM)',done:false,note:'DJ, dinner, champagne tower, barista, pizza bar'},
+    {id:'c80',text:'Send-off! 🎆',done:false,note:'Fireworks / helicopter / getaway'},
+    {id:'c81',text:'Collect all personal items & gifts',done:false,note:''},
+  ],
+  after:[
+    {id:'c82',text:'Send thank-you notes to all guests',done:false,note:'Track in Guest List tab',priority:'high'},
+    {id:'c83',text:'Receive photos from Shelby Norris (4-6 weeks)',done:false,note:'Online gallery'},
+    {id:'c84',text:'Damage deposit returned by Lilly Creek (within 30 days)',done:false,note:'$500 deposit'},
+    {id:'c85',text:'Write vendor reviews online',done:false,note:''},
+    {id:'c86',text:'Legal name change (if applicable)',done:false,note:''},
+    {id:'c87',text:'Return or preserve wedding dress',done:false,note:''},
+    {id:'c88',text:'Send farewell brunch thank-you (if hosted)',done:false,note:''},
+  ]
+};
+
+let checklistState = {};
+async function loadChecklist() {
+  const saved = await window.fbGet('checklist');
+  if (saved) { try { checklistState = saved; } catch(e) { checklistState = {}; } }
+  CHECKLIST.foundation.concat(CHECKLIST['12mo'],CHECKLIST['9mo'],CHECKLIST['6mo'],
+    CHECKLIST['3mo'],CHECKLIST['1mo'],CHECKLIST.week,CHECKLIST.dayof,CHECKLIST.after)
+    .forEach(item => { if (checklistState[item.id] === undefined) checklistState[item.id] = item.done; });
+}
+async function saveChecklist() { await window.fbSet('checklist', checklistState); updateChecklistProgress(); updateDashboard(); }
+
+function renderChecklist() {
+  const sections = [
+    ['cl-foundation','foundation'],['cl-12mo','12mo'],['cl-9mo','9mo'],
+    ['cl-6mo','6mo'],['cl-3mo','3mo'],['cl-1mo','1mo'],
+    ['cl-week','week'],['cl-dayof','dayof'],['cl-after','after']
+  ];
+  sections.forEach(([elId, key]) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.innerHTML = CHECKLIST[key].map(item => {
+      const done = checklistState[item.id];
+      const pri = item.priority ? `<span class="chk-priority p-${item.priority}">${item.priority}</span>` : '';
+      return `<div class="chk-item${done?' done':''}">
+        <input type="checkbox" id="${item.id}" ${done?'checked':''} onchange="toggleCheck('${item.id}',this.checked)">
+        <label for="${item.id}">${item.text}${pri}${item.note?`<span class="chk-note">📌 ${item.note}</span>`:''}
+        </label></div>`;
+    }).join('');
+  });
+  updateChecklistProgress();
+}
+
+function toggleCheck(id, val) {
+  checklistState[id] = val;
+  saveChecklist(); renderChecklist();
+}
+
+function updateChecklistProgress() {
+  const all = Object.keys(checklistState);
+  const done = all.filter(k=>checklistState[k]).length;
+  const pct = all.length ? Math.round(done/all.length*100) : 0;
+  setText('chk-prog-pct', pct + '%');
+  const bar = document.getElementById('chk-prog-bar');
+  if (bar) bar.style.width = pct + '%';
+}
+
+// ═══════════════════════════════════════════════════════════
+// FINANCE
+// ═══════════════════════════════════════════════════════════
+const DEFAULT_PAYMENTS = [
+  {id:'p1',vendor:'Lilly Creek Farm Events',desc:'Booking Deposit (25% or $5,000 to reserve date) — ACH',amount:5000,due:'2026-02-15',paid:5000,method:'Bank Transfer',done:true},
+  {id:'p2',vendor:'Lilly Creek Farm Events',desc:'Payment 2 — 25% of total (6 months prior)',amount:10168.50,due:'2026-11-01',paid:0,method:'',done:false},
+  {id:'p3',vendor:'Lilly Creek Farm Events',desc:'Payment 3 — 25% of total (90 days prior)',amount:10168.50,due:'2027-01-30',paid:0,method:'',done:false},
+  {id:'p4',vendor:'Lilly Creek Farm Events',desc:'Final Balance (30 days prior) — ⚠️ CASH ONLY',amount:15337,due:'2027-04-01',paid:0,method:'Cash',done:false},
+  {id:'p5',vendor:'Lilly Creek Farm — Damage Deposit',desc:'Refundable within 30 days after event',amount:500,due:'2027-05-01',paid:0,method:'',done:false},
+  {id:'p6',vendor:'Shelby Norris Photography',desc:'Deposit (30%) — due at contract signing',amount:0,due:'2026-04-01',paid:0,method:'',done:false},
+  {id:'p7',vendor:'Shelby Norris Photography',desc:'2nd Payment (30%) — 6 months before',amount:0,due:'2026-11-01',paid:0,method:'',done:false},
+  {id:'p8',vendor:'Shelby Norris Photography',desc:'Final Balance (40%) — 2 weeks before',amount:0,due:'2027-04-17',paid:0,method:'',done:false},
+  {id:'p9',vendor:'Officiant / Minister',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p10',vendor:'Hair & Makeup',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p11',vendor:'Wedding Rings / Bands',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p12',vendor:'Wedding Dress',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p13',vendor:'Rehearsal Dinner',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p14',vendor:'Friday Night Event',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p15',vendor:'Honeymoon',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p16',vendor:'Wedding Invitations',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p17',vendor:'Hotel Room Block (any attrition)',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+  {id:'p18',vendor:'Wedding Favors',desc:'',amount:0,due:'',paid:0,method:'',done:false},
+];
+let payments = [];
+let finBudget = 0;
+let finNotes = '';
+const FIN_VER = 2; // bump to reset finance defaults
+
+async function loadFinance() {
+  const s = await window.fbGet('finance');
+  if (s) {
+    try { const d = s; payments = d.payments || DEFAULT_PAYMENTS.map(p=>({...p})); finBudget = d.budget||0; finNotes = d.notes||''; }
+    catch(e) { payments = DEFAULT_PAYMENTS.map(p=>({...p})); }
+  } else { payments = DEFAULT_PAYMENTS.map(p=>({...p})); }
+}
+
+async function saveFinance() {
+  const budgetEl = document.getElementById('fin-budget-input');
+  if (budgetEl) finBudget = +budgetEl.value || 0;
+  const notesEl = document.getElementById('fin-notes');
+  if (notesEl) finNotes = notesEl.value;
+  await window.fbSet('finance', {payments, budget:finBudget, notes:finNotes});
+  renderFinanceSummary();
+}
+
+function renderFinanceSummary() {
+  const fmt = n => '$' + Math.abs(+n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const committed = payments.reduce((s,p)=>s+(+p.amount||0),0);
+  const paid      = payments.reduce((s,p)=>s+(+p.paid||0),0);
+  const remaining = committed - paid;
+
+  // Extra guests cost (from extras calculator or live guest count)
+  const confirmedGuests = typeof guests !== 'undefined' ? guests.filter(g=>g[G.RSVP]==='Yes').length : 0;
+  const activeGuests    = typeof guests !== 'undefined' ? guests.filter(g=>(g[G.INV]||'Yes')==='Yes').length : 0;
+  const effectiveGuests = confirmedGuests > 0 ? confirmedGuests : activeGuests;
+  const extraGuests     = Math.max(0, effectiveGuests - 150);
+  const extraGuestCost  = extraGuests * 85;
+  const grandTotal      = committed + extraGuestCost;
+
+  setText('fin-total-budget', finBudget ? fmt(finBudget) : '—');
+  setText('fin-committed', fmt(committed));
+  setText('fin-paid', fmt(paid));
+  setText('fin-remaining', fmt(remaining));
+  const bEl = document.getElementById('fin-budget-input');
+  if (bEl && finBudget) bEl.value = finBudget;
+  const nEl = document.getElementById('fin-notes');
+  if (nEl && finNotes) nEl.value = finNotes;
+
+  // Build cost breakdown table
+  const tbl = document.getElementById('fin-breakdown-table');
+  if (!tbl) return;
+  const rowStyle = (i) => i%2===0 ? 'background:var(--purple-light);' : '';
+  let rows = payments
+    .filter(p => p.vendor && p.amount)
+    .map((p,i) => {
+      const bal = (+p.amount||0) - (+p.paid||0);
+      const doneTag = p.done ? '<span style="color:var(--success);font-size:.8em;font-weight:700;">✓ Paid</span>' : '';
+      return `<tr style="${rowStyle(i)}">
+        <td style="padding:7px 10px;font-weight:600;">${p.vendor}</td>
+        <td style="padding:7px 10px;font-size:.82em;color:var(--text-light);">${p.desc||''}</td>
+        <td style="padding:7px 10px;text-align:right;">${fmt(p.amount)}</td>
+        <td style="padding:7px 10px;text-align:right;color:var(--success);">${p.paid ? fmt(p.paid) : '—'}</td>
+        <td style="padding:7px 10px;text-align:right;color:${bal>0?'var(--warning)':'var(--success)'};">${bal>0?fmt(bal):'—'}</td>
+        <td style="padding:7px 10px;text-align:center;">${doneTag}</td>
+      </tr>`;
+    }).join('');
+  if (extraGuests > 0) {
+    const rowI = payments.filter(p=>p.vendor&&p.amount).length;
+    rows += `<tr style="${rowStyle(rowI)};font-style:italic;">
+      <td style="padding:7px 10px;font-weight:600;">Additional Guests</td>
+      <td style="padding:7px 10px;font-size:.82em;color:var(--text-light);">${extraGuests} guests over 150 × $85</td>
+      <td style="padding:7px 10px;text-align:right;">${fmt(extraGuestCost)}</td>
+      <td style="padding:7px 10px;text-align:right;color:var(--success);">—</td>
+      <td style="padding:7px 10px;text-align:right;color:var(--warning);">${fmt(extraGuestCost)}</td>
+      <td style="padding:7px 10px;"></td>
+    </tr>`;
+  }
+  rows += `<tr style="background:var(--purple);color:#fff;font-weight:700;">
+    <td colspan="2" style="padding:9px 10px;">TOTAL</td>
+    <td style="padding:9px 10px;text-align:right;">${fmt(grandTotal)}</td>
+    <td style="padding:9px 10px;text-align:right;">${fmt(paid)}</td>
+    <td style="padding:9px 10px;text-align:right;">${fmt(grandTotal - paid)}</td>
+    <td style="padding:9px 10px;"></td>
+  </tr>`;
+  tbl.innerHTML = `<table style="width:100%;border-collapse:collapse;font-size:.88em;">
+    <thead><tr style="background:var(--purple-dark);color:#fff;">
+      <th style="padding:7px 10px;text-align:left;">Vendor</th>
+      <th style="padding:7px 10px;text-align:left;">Description</th>
+      <th style="padding:7px 10px;text-align:right;">Amount</th>
+      <th style="padding:7px 10px;text-align:right;">Paid</th>
+      <th style="padding:7px 10px;text-align:right;">Balance</th>
+      <th style="padding:7px 10px;text-align:center;">Status</th>
+    </thead>
+    <tbody>${rows}</tbody>
+  </table>`;
+}
+
+
+// ═══════════════════════════════════════════════════════════
+// CURRENCY INPUT HELPERS
+// ═══════════════════════════════════════════════════════════
+function fmtNum(n) {
+  const v = +n || 0;
+  if (!v) return '';
+  return v.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function parseCurrency(s) {
+  return parseFloat((s||'').replace(/[$,]/g,'')) || 0;
+}
+function stripFmt(el) {
+  const raw = parseCurrency(el.value);
+  el.value = raw || '';
+}
+function applyFmt(el, rowIdx, field) {
+  const raw = parseCurrency(el.value);
+  el.value = raw ? fmtNum(raw) : '';
+  updatePayment(rowIdx, field, raw);
+}
+
+function renderPayments() {
+  const container = document.getElementById('payment-rows');
+  if (!container) return;
+  container.innerHTML = payments.map((p,i) => `
+    <div class="pay-grid" style="${p.done?'background:var(--success-bg);':''}">
+      <div>
+        <input class="tbl-input" value="${p.vendor}" placeholder="Vendor..." style="font-weight:700;margin-bottom:3px;" onchange="updatePayment(${i},'vendor',this.value)">
+        <input class="tbl-input" value="${p.desc}" placeholder="Description..." style="font-size:.8em;" onchange="updatePayment(${i},'desc',this.value)">
+      </div>
+      <div style="display:flex;align-items:center;gap:2px;"><span style="color:var(--text-light);font-size:.9em;">$</span><input type="text" class="tbl-input currency-input" value="${p.amount ? fmtNum(p.amount) : ''}" placeholder="0.00" style="min-width:80px;" onfocus="stripFmt(this)" onblur="applyFmt(this,${i},'amount')" onchange="updatePayment(${i},'amount',parseCurrency(this.value))"></div>
+      <div><input type="date" class="tbl-input" value="${p.due||''}" onchange="updatePayment(${i},'due',this.value)"></div>
+      <div style="display:flex;align-items:center;gap:2px;"><span style="color:var(--text-light);font-size:.9em;">$</span><input type="text" class="tbl-input currency-input" value="${p.paid ? fmtNum(p.paid) : ''}" placeholder="0.00" style="min-width:80px;" onfocus="stripFmt(this)" onblur="applyFmt(this,${i},'paid')" onchange="updatePayment(${i},'paid',parseCurrency(this.value))"></div>
+      <div><select class="tbl-select" onchange="updatePayment(${i},'method',this.value)">
+        <option value="">—</option>
+        ${['Check','Credit Card','Debit Card','Bank Transfer','Cash','Zelle','Venmo'].map(m=>`<option value="${m}"${p.method===m?' selected':''}>${m}</option>`).join('')}
+      </select></div>
+      <div style="text-align:center;"><input type="checkbox" style="accent-color:var(--orange);width:17px;height:17px;" ${p.done?'checked':''} onchange="updatePayment(${i},'done',this.checked)" title="Mark paid"></div>
+    </div>`).join('');
+  renderFinanceSummary();
+}
+
+function updatePayment(i, field, val) {
+  if (field === 'done') payments[i].done = val;
+  else if (field === 'amount' || field === 'paid') payments[i][field] = +val || 0;
+  else payments[i][field] = val;
+  saveFinance(); renderFinanceSummary();
+  toast('Saved ✓');
+}
+
+function addPaymentRow() {
+  payments.push({id:'p'+(Date.now()),vendor:'New Vendor',desc:'',amount:0,due:'',paid:0,method:'',done:false});
+  saveFinance(); renderPayments();
+}
+
+// ═══════════════════════════════════════════════════════════
+// DASHBOARD UPDATE
+// ═══════════════════════════════════════════════════════════
+function updateDashboard() {
+  // Days
+  const diff = new Date('2027-05-01') - new Date();
+  const days = Math.max(0, Math.floor(diff/86400000));
+  setText('ds-days', days);
+
+  // Guests
+  const confirmed   = guests.filter(g=>g[G.RSVP]==='Yes').length;
+  const activeInv   = guests.filter(g=>(g[G.INV]||'Yes')==='Yes').length;
+  const invited     = activeInv;
+  const alyYes      = guests.filter(g=>g[G.SIDE]==='Alyssa'&&g[G.RSVP]==='Yes').length;
+  const maxYes      = guests.filter(g=>g[G.SIDE]==='Max'&&g[G.RSVP]==='Yes').length;
+  const tyDone      = guests.filter(g=>g[G.TY]).length;
+  const needRsvp    = guests.filter(g=>(g[G.INV]||'Yes')==='Yes'&&(g[G.RSVP]==='Unknown'||g[G.RSVP]==='Maybe')).length;
+  setText('ds-confirmed', confirmed);
+  setText('ds-invited', invited);
+  setText('ds-unknown', needRsvp);
+  setText('ds-ty', tyDone);
+  setText('ds-aly-ct', alyYes);
+  setText('ds-max-ct', maxYes);
+  const total = alyYes + maxYes;
+  setText('ds-aly-pct', total ? Math.round(alyYes/total*100)+'% of responses' : '');
+  setText('ds-max-pct', total ? Math.round(maxYes/total*100)+'% of responses' : '');
+  const effectiveCount = confirmed > 0 ? confirmed : invited;
+  const capBar = document.getElementById('ds-cap-bar');
+  if (capBar) capBar.style.width = Math.min(100, Math.round(effectiveCount/150*100)) + '%';
+  const extraOver = Math.max(0, effectiveCount-150);
+  const src = confirmed > 0 ? 'confirmed' : 'invited';
+  const overLabel = extraOver > 0 ? ` · ${extraOver} over the 150 included` : ' · within 150 included ✓';
+  setText('ds-cap-lbl', `${effectiveCount} ${src}${overLabel}`);
+  // Payment progress bar (% of vendors with payments entered)
+  const payEl = document.getElementById('dash-pay-progress');
+  if (payEl && typeof payments !== 'undefined') {
+    const withAmts = payments.filter(p=>p.amount>0).length;
+    const paidPct = payments.length ? Math.round(withAmts/payments.length*100) : 0;
+    const paidRows = payments.filter(p=>p.done);
+    const paidCount = paidRows.length;
+    payEl.innerHTML = `<div style="font-size:.82em;color:var(--text-light);margin-bottom:5px;">Vendors with amounts set: <strong>${withAmts}/${payments.length}</strong> · Payments marked paid: <strong>${paidCount}</strong></div>`;
+  }
+
+  // Checklist
+  const all = Object.keys(checklistState);
+  const done = all.filter(k=>checklistState[k]).length;
+  const pct = all.length ? Math.round(done/all.length*100) : 0;
+  setText('ds-tasks', done + '/' + all.length);
+  const progBar = document.getElementById('ds-prog-bar');
+  if (progBar) progBar.style.width = pct + '%';
+  setText('ds-prog-pct', pct + '%');
+
+  // Checklist preview — next 5 undone high priority items
+  const allItems = Object.values(CHECKLIST).flat();
+  const upcoming = allItems.filter(i=>!checklistState[i.id]).slice(0,5);
+  const previewEl = document.getElementById('dash-checklist-preview');
+  if (previewEl) {
+    previewEl.innerHTML = upcoming.map(i=>
+      `<div class="chk-item"><input type="checkbox" onchange="toggleCheck('${i.id}',this.checked)"><label>${i.text}</label></div>`
+    ).join('') || '<p style="color:var(--success);font-weight:700;">🎉 All tasks complete!</p>';
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// HOTEL TASKS
+// ═══════════════════════════════════════════════════════════
+const HOTEL_TASKS = [
+  {id:'h1',text:'Research hotels near Lilly Creek Farm (Auraria, GA area)'},
+  {id:'h2',text:'Contact hotel sales manager about group room block'},
+  {id:'h3',text:'Negotiate group rate for wedding weekend (Thu–Sun)'},
+  {id:'h4',text:'Confirm number of rooms to reserve in the block'},
+  {id:'h5',text:'Get cut-off date (date after which unbooked rooms release)'},
+  {id:'h6',text:'Get guest booking link / group code'},
+  {id:'h7',text:'Consider second hotel option for different budget levels'},
+  {id:'h8',text:'Add hotel info to wedding website'},
+  {id:'h9',text:'Include hotel details in wedding invitations'},
+  {id:'h10',text:'Send hotel info to out-of-town guests directly'},
+  {id:'h11',text:'Check block status 60 days before — add rooms if needed'},
+  {id:'h12',text:'Confirm final room count 30 days before wedding'},
+];
+let hotelState = {};
+async function loadHotel() {
+  const s = await window.fbGet('hotel');
+  if (s) { try { hotelState = s.tasks||{}; restoreHotelFields(s); } catch(e){} }
+}
+function restoreHotelFields(d) {
+  ['name','addr','phone','contact','code','rate','rooms','cutoff','checkin','checkout','link','notes'].forEach(f=>{
+    const el = document.getElementById('h-'+f); if (el&&d[f]) el.value = d[f];
+  });
+  ['name','rate','rooms','cutoff','notes'].forEach(f=>{
+    const el = document.getElementById('h2-'+f); if (el&&d['h2_'+f]) el.value = d['h2_'+f];
+  });
+}
+async function saveHotel() {
+  const d = {tasks:hotelState};
+  ['name','addr','phone','contact','code','rate','rooms','cutoff','checkin','checkout','link','notes'].forEach(f=>{
+    const el = document.getElementById('h-'+f); if(el) d[f]=el.value;
+  });
+  ['name','rate','rooms','cutoff','notes'].forEach(f=>{
+    const el = document.getElementById('h2-'+f); if(el) d['h2_'+f]=el.value;
+  });
+  await window.fbSet('hotel', d);
+  toast('Saved ✓');
+}
+function saveHotel2() { saveHotel(); }
+function renderHotelTasks() {
+  const el = document.getElementById('hotel-tasks');
+  if (!el) return;
+  el.innerHTML = HOTEL_TASKS.map(t=>`
+    <div class="hotel-task${hotelState[t.id]?' done':''}">
+      <input type="checkbox" ${hotelState[t.id]?'checked':''} onchange="toggleHotelTask('${t.id}',this.checked)">
+      <label>${t.text}</label>
+    </div>`).join('');
+}
+function toggleHotelTask(id,val) { hotelState[id]=val; saveHotel(); renderHotelTasks(); toast('Saved ✓'); }
+
+// ═══════════════════════════════════════════════════════════
+// VENUE DECISIONS
+// ═══════════════════════════════════════════════════════════
+let venueDecisions = {};
+async function toggleVenueDecision(el) {
+  el.classList.toggle('selected');
+  const cb = el.querySelector('input[type=checkbox]');
+  if(cb) cb.checked = el.classList.contains('selected');
+  venueDecisions[el.id] = el.classList.contains('selected') ? '1' : '0';
+  await window.fbSet('venueDecisions', venueDecisions);
+  toast('Saved ✓');
+}
+async function loadVenueDecisions() {
+  const saved = await window.fbGet('venueDecisions');
+  if (saved) venueDecisions = saved;
+  ['vd-catering','vd-sendoff','vd-cocktails','vd-dancefloor','vd-rehearsal','vd-marquee','vd-decor'].forEach(id=>{
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (venueDecisions[id] === '1') {
+      el.classList.add('selected');
+      const cb = el.querySelector('input[type=checkbox]');
+      if (cb) cb.checked = true;
+    }
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// SCHEDULE NOTES
+// ═══════════════════════════════════════════════════════════
+async function saveSchedNote(key, val) {
+  const cur = await window.fbGet('schedNotes') || {};
+  cur[key] = val;
+  await window.fbSet('schedNotes', cur);
+  toast('Saved ✓');
+}
+async function loadSchedNotes() {
+  const d = await window.fbGet('schedNotes') || {};
+  ['thu','fri','sat','sun'].forEach(k=>{
+    const el = document.getElementById('sn-'+k);
+    if (el && d[k]) el.value = d[k];
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// VENDOR NOTES
+// ═══════════════════════════════════════════════════════════
+async function saveVendorNote(key, val) {
+  const cur = await window.fbGet('vendorNotes') || {};
+  cur[key] = val;
+  await window.fbSet('vendorNotes', cur);
+  toast('Saved ✓');
+}
+async function loadVendorNotes() {
+  const d = await window.fbGet('vendorNotes') || {};
+  const keys = ['photo','dj','floral','offic','offic_ph','offic_cost','hmu','hmu_ph','hmu_cost',
+    'hmu_trial','vid','vid_cost','vid_notes','dress','dress_cost','dress_fit',
+    'reh','reh_time','reh_cost','fri','fri_time','fri_notes','honey','honey_dates','honey_cost'];
+  const idMap = {photo:'v-photo-notes',dj:'v-dj-notes',floral:'v-floral-notes',
+    offic:'v-offic-name',offic_ph:'v-offic-phone',offic_cost:'v-offic-cost',
+    hmu:'v-hmu-name',hmu_ph:'v-hmu-phone',hmu_cost:'v-hmu-cost',hmu_trial:'v-hmu-trial',
+    vid:'v-vid-name',vid_cost:'v-vid-cost',vid_notes:'v-vid-notes',
+    dress:'v-dress-shop',dress_cost:'v-dress-cost',dress_fit:'v-dress-fit',
+    reh:'v-reh-venue',reh_time:'v-reh-time',reh_cost:'v-reh-cost',
+    fri:'v-fri-venue',fri_time:'v-fri-time',fri_notes:'v-fri-notes',
+    honey:'v-honey-dest',honey_dates:'v-honey-dates',honey_cost:'v-honey-cost'};
+  if (d.caterer) { const el = document.getElementById('v-caterer'); if (el) el.value = d.caterer; }
+  keys.forEach(k=>{
+    const id = idMap[k]; if (!id) return;
+    const el = document.getElementById(id);
+    if (el && d[k]) el.value = d[k];
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════
+function setText(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
+
+
+// ═══════════════════════════════════════════════════════════
+// VENUE PACKAGE ITEM TOGGLES
+// ═══════════════════════════════════════════════════════════
+let pkgToggles = {};
+async function togglePkgItem(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isOut = el.classList.toggle('opted-out');
+  const cb = el.querySelector('input.pkg-toggle');
+  if (cb) cb.checked = !isOut;
+  pkgToggles[id] = isOut ? '0' : '1';
+  await window.fbSet('pkgToggles', pkgToggles);
+  toast(isOut ? 'Item opted out ✓' : 'Item opted in ✓');
+}
+async function loadPkgToggles() {
+  const saved = await window.fbGet('pkgToggles');
+  if (saved) pkgToggles = saved;
+  for (let i = 1; i <= 22; i++) {
+    const id = 'vi' + i;
+    const el = document.getElementById(id);
+    if (!el) continue;
+    if (pkgToggles[id] === '0') {
+      el.classList.add('opted-out');
+      const cb = el.querySelector('input.pkg-toggle');
+      if (cb) cb.checked = false;
+    }
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// CATERING INFO
+// ═══════════════════════════════════════════════════════════
+async function saveCateringInfo() {
+  const choice = document.getElementById('cat-choice')?.value || '';
+  const who    = document.getElementById('cat-who')?.value || '';
+  const when   = document.getElementById('cat-when')?.value || '';
+  const notes  = document.getElementById('cat-notes')?.value || '';
+  await window.fbSet('catering', {choice,who,when,notes});
+  const disp = document.getElementById('cat-saved-display');
+  if (disp && choice) {
+    const whenStr = when ? ` on ${when}` : '';
+    const whoStr  = who  ? ` (decided by ${who}${whenStr})` : '';
+    disp.textContent = `✅ ${choice}${whoStr}`;
+    disp.style.display = 'block';
+  }
+  toast('Catering saved ✓');
+}
+async function loadCateringInfo() {
+  const d = await window.fbGet('catering');
+  if (!d) return;
+  if (d.choice) { const el = document.getElementById('cat-choice'); if (el) el.value = d.choice; }
+  if (d.who)    { const el = document.getElementById('cat-who');    if (el) el.value = d.who; }
+  if (d.when)   { const el = document.getElementById('cat-when');   if (el) el.value = d.when; }
+  if (d.notes)  { const el = document.getElementById('cat-notes');  if (el) el.value = d.notes; }
+  const disp = document.getElementById('cat-saved-display');
+  if (disp && d.choice) {
+    const whenStr = d.when ? ` on ${d.when}` : '';
+    const whoStr  = d.who  ? ` (decided by ${d.who}${whenStr})` : '';
+    disp.textContent = `✅ ${d.choice}${whoStr}`;
+    disp.style.display = 'block';
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+// EXTRAS CALCULATOR
+// ═══════════════════════════════════════════════════════════
+async function calcExtras() {
+  const g = parseFloat(document.getElementById('ex-guests')?.value) || 0;
+  const c = parseFloat(document.getElementById('ex-chairs')?.value) || 0;
+  const l = parseFloat(document.getElementById('ex-letters')?.value) || 0;
+  const fl = parseFloat(document.getElementById('ex-floral')?.value) || 0;
+  const ca = parseFloat(document.getElementById('ex-cake')?.value) || 0;
+  const pe = parseFloat(document.getElementById('ex-photoedit')?.value) || 0;
+  const ot = parseFloat(document.getElementById('ex-other')?.value) || 0;
+
+  const gTotal  = g * 85;
+  const cTotal  = c * 5;
+  const lTotal  = l * 50;
+  const peTotal = pe * 250;
+
+  const subtotal = gTotal + cTotal + lTotal + fl + ca + peTotal + ot;
+  const ccFee    = subtotal * 0.03;
+  const grand    = subtotal + ccFee;
+
+  const fmt = v => '$' + v.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = fmt(val); };
+  set('ex-guests-total',   gTotal);
+  set('ex-chairs-total',   cTotal);
+  set('ex-letters-total',  lTotal);
+  set('ex-floral-total',   fl);
+  set('ex-cake-total',     ca);
+  set('ex-cc-total',       ccFee);
+  set('ex-photoedit-total',peTotal);
+  set('ex-other-total',    ot);
+  set('ex-grand-total',    grand);
+
+  await window.fbSet('extras', {g,c,l,fl,ca,pe,ot});
+}
+async function loadExtras() {
+  const d = await window.fbGet('extras');
+  if (!d) return;
+  const setVal = (id, v) => { const el = document.getElementById(id); if (el && v) el.value = v; };
+  setVal('ex-guests', d.g); setVal('ex-chairs', d.c); setVal('ex-letters', d.l);
+  setVal('ex-floral', d.fl); setVal('ex-cake', d.ca); setVal('ex-photoedit', d.pe);
+  setVal('ex-other', d.ot);
+  calcExtras();
+}
+
+// ════════════════
+</script>
+</div><!-- end site-content -->
+
+<script>
+// ── SITE PASSWORD GATE ────────────────────────────────────
+function checkSitePassword() {
+  const val = document.getElementById('site-pw-input').value;
+  const err = document.getElementById('site-pw-err');
+  if (val.toLowerCase() === 'nala') {
+    document.getElementById('site-gate').style.display = 'none';
+    document.getElementById('site-content').style.display = 'block';
+    sessionStorage.setItem('site_unlocked', '1');
+    err.style.display = 'none';
+  } else {
+    err.style.display = 'block';
+    document.getElementById('site-pw-input').value = '';
+    document.getElementById('site-pw-input').focus();
+  }
+}
+
+// Check if already unlocked this session
+if (sessionStorage.getItem('site_unlocked') === '1') {
+  document.getElementById('site-gate').style.display = 'none';
+  document.getElementById('site-content').style.display = 'block';
+} else {
+  document.getElementById('site-gate').style.display = 'flex';
+  document.getElementById('site-content').style.display = 'none';
+}
+</script>
+</body>
+</html>
