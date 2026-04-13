@@ -310,13 +310,8 @@ body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);min
 <!--  FIREBASE CONFIG — paste your values here              -->
 <!-- ═══════════════════════════════════════════════════════ -->
 <script type="module">
-// ┌─────────────────────────────────────────────────────────┐
-// │  STEP 1: Replace the values below with your Firebase    │
-// │  project config (from Firebase Console >               │
-// │  Project Settings > Your apps > SDK setup)             │
-// └─────────────────────────────────────────────────────────┘
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, getDoc, setDoc, onSnapshot, collection }
+import { getFirestore, doc, getDoc, setDoc, onSnapshot }
   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -330,46 +325,65 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db  = getFirestore(app);
-
-// ─── Firestore helpers ──────────────────────────────────────
-// All data lives in a single Firestore document: weddings/max-alyssa
 const WED_DOC = doc(db, 'weddings', 'max-alyssa');
 
-async function fbGet(key) {
+// Cache the full document in memory so we don't re-read on every fbGet
+let _cache = null;
+let _cacheLoaded = false;
+
+async function loadCache() {
   try {
     const snap = await getDoc(WED_DOC);
-    if (snap.exists()) return snap.data()[key] ?? null;
-    return null;
-  } catch(e) { console.warn('fbGet error', key, e); return null; }
+    _cache = snap.exists() ? snap.data() : {};
+    _cacheLoaded = true;
+    console.log('✅ Firebase loaded, keys:', Object.keys(_cache));
+  } catch(e) {
+    console.error('❌ Firebase load error:', e);
+    _cache = {};
+    _cacheLoaded = true;
+  }
+}
+
+async function fbGet(key) {
+  if (!_cacheLoaded) await loadCache();
+  return _cache[key] ?? null;
 }
 
 async function fbSet(key, value) {
   try {
+    // Update cache immediately
+    if (!_cache) _cache = {};
+    _cache[key] = value;
+    // Write to Firestore
     await setDoc(WED_DOC, { [key]: value }, { merge: true });
-  } catch(e) { console.warn('fbSet error', key, e); }
-}
-
-// ─── Real-time listener: refresh UI when any other user saves ──
-onSnapshot(WED_DOC, (snap) => {
-  if (!snap.exists() || snap.metadata.hasPendingWrites) return;
-  // Remote update — silently reload data into memory and re-render
-  const d = snap.data();
-  if (typeof applyRemoteData === 'function') applyRemoteData(d);
-});
-
-// Expose to the rest of the page (non-module scripts)
-window.fbGet = fbGet;
-window.fbSet = fbSet;
-
-// Fire initApp once this module has loaded — handles both load orders
-function tryInit() {
-  if (typeof initApp === 'function') {
-    initApp();
-  } else {
-    setTimeout(tryInit, 50);
+    console.log('✅ Saved to Firebase:', key);
+  } catch(e) {
+    console.error('❌ Firebase save error:', key, e);
   }
 }
-tryInit();
+
+// Real-time listener for other users' changes
+onSnapshot(WED_DOC, (snap) => {
+  if (!snap.exists() || snap.metadata.hasPendingWrites) return;
+  _cache = snap.data();
+  console.log('🔄 Remote update received');
+  if (typeof applyRemoteData === 'function') applyRemoteData(_cache);
+});
+
+// Pre-load the cache, then start the app
+loadCache().then(() => {
+  function tryInit() {
+    if (typeof initApp === 'function') {
+      initApp();
+    } else {
+      setTimeout(tryInit, 50);
+    }
+  }
+  tryInit();
+});
+
+window.fbGet = fbGet;
+window.fbSet = fbSet;
 </script>
 </head>
 <body>
