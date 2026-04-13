@@ -774,9 +774,11 @@ tryInit();
 <!-- ═══════════════════════════════════════════════════════ -->
 <div class="tab-pane" id="tab-guests">
 
-
-
-  <!-- Filters & Search -->
+  <!-- Host Summary -->
+  <div class="card" id="host-summary-card" style="padding:12px 16px;margin-bottom:12px;">
+    <div class="card-title" style="font-size:1em;margin-bottom:10px;">👥 Guest Summary by Host</div>
+    <div id="host-summary-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;"></div>
+  </div>
   <div class="card" style="padding:16px 20px;">
     <div class="filter-bar" style="justify-content:space-between;flex-wrap:wrap;gap:8px;">
       <input class="search-box" type="text" id="gl-search" placeholder="🔍 Search guests..." oninput="renderGuests()" style="flex:1;min-width:200px;">
@@ -838,6 +840,7 @@ tryInit();
             <th>Thank-You</th>
             <th>Rehearsal</th>
             <th>Notes</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="guest-tbody"></tbody>
@@ -1705,11 +1708,12 @@ function renderGuests() {
       <td style="text-align:center;"><input type="checkbox" style="accent-color:var(--orange);width:17px;height:17px;" ${g[G.TY]?'checked':''} onchange="updateGuest(${g[G.ID]},'ty',this.checked)"></td>
       <td style="text-align:center;"><input type="checkbox" style="accent-color:var(--purple);width:17px;height:17px;" ${g[G.REH]?'checked':''} onchange="updateGuest(${g[G.ID]},'reh',this.checked)"></td>
       <td><input class="tbl-input" value="${g[G.NOTES]}" placeholder="Notes..." onchange="updateGuest(${g[G.ID]},'notes',this.value)"></td>
+      <td style="text-align:center;"><button onclick="deleteGuest(${g[G.ID]})" title="Delete guest" style="background:none;border:none;cursor:pointer;font-size:1em;color:#BDBDBD;" onmouseover="this.style.color='var(--danger)'" onmouseout="this.style.color='#BDBDBD'">🗑️</button></td>
     </tr>`;
   };
 
   const sectionHeader = (label, color, count) =>
-    `<tr><td colspan="10" style="background:${color};padding:6px 12px;font-weight:700;font-size:.82em;text-transform:uppercase;letter-spacing:1px;color:#fff;">${label} (${count})</td></tr>`;
+    `<tr><td colspan="11" style="background:${color};padding:6px 12px;font-weight:700;font-size:.82em;text-transform:uppercase;letter-spacing:1px;color:#fff;">${label} (${count})</td></tr>`;
 
   const invitedList  = guests.filter(g => (g[G.INV]||'Yes')==='Yes'  && matchesFilters(g)).sort(sortFn);
   const maybeList    = guests.filter(g => (g[G.INV]||'Yes')==='Maybe' && matchesFilters(g)).sort(sortFn);
@@ -1752,6 +1756,7 @@ function renderGuests() {
       vpEl.textContent = `👥 ${activeCount} invited · ${confirmedCount} accepted · within the 150 included ✓`;
     }
   }
+  renderHostSummary();
 }
 
 function updateGuest(id, field, val) {
@@ -1761,6 +1766,61 @@ function updateGuest(id, field, val) {
   if (map[field]!==undefined) g[map[field]] = val;
   saveGuests(); renderGuests();
   toast('Saved ✓');
+}
+
+async function deleteGuest(id) {
+  const g = guests.find(x=>x[G.ID]===id);
+  if (!g) return;
+  if (!confirm(`Permanently delete "${g[G.NAME]}"? This cannot be undone.`)) return;
+  guests = guests.filter(x=>x[G.ID]!==id);
+  await saveGuests();
+  renderGuests();
+  toast('Guest deleted 🗑️');
+}
+
+function renderHostSummary() {
+  const el = document.getElementById('host-summary-grid');
+  if (!el) return;
+
+  const sides = ['Alyssa', 'Max'];
+  const sideEmoji = {Alyssa:'🌸', Max:'🏈'};
+  const sideColor = {Alyssa:'var(--purple)', Max:'var(--orange)'};
+  const sideBg    = {Alyssa:'var(--purple-light)', Max:'var(--orange-light)'};
+  const allSides  = [...sides, 'Overall'];
+
+  el.innerHTML = allSides.map(side => {
+    const pool = side === 'Overall' ? guests : guests.filter(g => g[G.SIDE] === side);
+
+    const invited  = pool.filter(g => (g[G.INV]||'Yes') === 'Yes').length;
+    const removed  = pool.filter(g => (g[G.INV]||'Yes') === 'Remove').length;
+    const maybe    = pool.filter(g => (g[G.INV]||'Yes') === 'Maybe').length;
+    const rsvpYes  = pool.filter(g => g[G.RSVP] === 'Yes').length;
+    const rsvpNo   = pool.filter(g => g[G.RSVP] === 'No').length;
+    const unknown  = pool.filter(g => (g[G.INV]||'Yes')==='Yes' && (g[G.RSVP]==='Unknown'||g[G.RSVP]==='Maybe')).length;
+    const rehearsal= pool.filter(g => g[G.REH]).length;
+
+    const color = side === 'Overall' ? 'var(--gold)' : sideColor[side];
+    const bg    = side === 'Overall' ? 'var(--gold-light)' : sideBg[side];
+    const emoji = side === 'Overall' ? '💍' : sideEmoji[side];
+    const label = side === 'Overall' ? 'Overall' : side;
+
+    const stat = (val, lbl, clr) =>
+      `<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid var(--border);">
+        <span style="font-size:.78em;color:var(--text-light);">${lbl}</span>
+        <span style="font-weight:700;font-size:.9em;color:${clr};">${val}</span>
+      </div>`;
+
+    return `<div style="background:${bg};border-radius:10px;padding:12px 14px;border:1px solid ${color};">
+      <div style="font-size:.82em;font-weight:700;color:${color};margin-bottom:8px;letter-spacing:.5px;">${emoji} ${label}</div>
+      ${stat(invited,  'Invited',        color)}
+      ${stat(rsvpYes,  'RSVP Yes',       'var(--success)')}
+      ${stat(unknown,  'Need RSVP',      'var(--neutral)')}
+      ${stat(rehearsal,'Rehearsal Dinner','var(--purple)')}
+      ${stat(maybe,    'Maybe List',     'var(--gold)')}
+      ${stat(rsvpNo,   'RSVP No',        'var(--danger)')}
+      ${stat(removed,  'Removed',        '#90A4AE')}
+    </div>`;
+  }).join('');
 }
 
 function saveNewGuest() {
