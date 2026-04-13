@@ -1681,14 +1681,14 @@ function objToGuest(o) {
 
 async function loadGuests() {
   const saved = await window.fbGet('guests');
-  const savedVer = await window.fbGet('guestVer');
-  if (!saved || !Array.isArray(saved) || savedVer != DATA_VER) {
+  if (saved && Array.isArray(saved) && saved.length > 0) {
+    // Always use Firebase data if it exists
+    guests = saved.map(o => typeof o === 'object' && !Array.isArray(o) ? objToGuest(o) : o);
+  } else {
+    // No Firebase data yet — load defaults and save them
     guests = GUEST_DEFAULTS.map(r=>[...r]);
     await window.fbSet('guests', guests.map(guestToObj));
     await window.fbSet('guestVer', DATA_VER);
-  } else {
-    // saved is array of objects — convert back to arrays
-    guests = saved.map(objToGuest);
   }
 }
 async function saveGuests() {
