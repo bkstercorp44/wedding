@@ -1608,34 +1608,42 @@ const GUEST_DEFAULTS = [
   [255,"James Wyman","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
   [256,"Walker Milliken","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
   [257,"Caroline Milliken","Peyton's Friends","Max","Unknown",0,false,false,"","Yes"],
-  [258,"Ron Gabbai","Unknown","","Unknown",0,false,false,"","Yes"],
-  [259,"Elayne Gabbai","Unknown","","Unknown",0,false,false,"","Yes"],
-  [260,"Wendy Leaf","Unknown","","Unknown",0,false,false,"","Yes"],
-  [261,"Stuart Leaf","Unknown","","Unknown",0,false,false,"","Yes"],
-  [262,"Amy Rodriguez","Unknown","","Unknown",0,false,false,"","Yes"],
-  [263,"Ricky Rodriguez","Unknown","","Unknown",0,false,false,"","Yes"],
-  [264,"Toni Destefano","Unknown","","Unknown",0,false,false,"","Yes"],
-  [265,"Stacy Gerdes","Unknown","","Unknown",0,false,false,"","Yes"],
-  [266,"Jennifer Moran","Unknown","","Unknown",0,false,false,"","Yes"],
-  [267,"Todd Moran","Unknown","","Unknown",0,false,false,"","Yes"],
-  [268,"Karina Martinez","Unknown","","Unknown",0,false,false,"","Yes"],
-  [269,"Rachel Nowlin","Unknown","","Unknown",0,false,false,"","Yes"],
-  [270,"Allyson Reeves","Unknown","","Unknown",0,false,false,"","Yes"],
-  [271,"Melanie Abernathy","Unknown","","Unknown",0,false,false,"","Yes"]
+  [258,"Ron Gabbai","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [259,"Elayne Gabbai","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [260,"Wendy Leaf","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [261,"Stuart Leaf","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [262,"Amy Rodriguez","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [263,"Ricky Rodriguez","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [264,"Toni Destefano","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [265,"Stacy Gerdes","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [266,"Jennifer Moran","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [267,"Todd Moran","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [268,"Karina Martinez","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [269,"Rachel Nowlin","Seth Work","Alyssa","Unknown",0,false,false,"","Yes"],
+  [270,"Allyson Reeves","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"],
+  [271,"Melanie Abernathy","SK/JK Friends","Alyssa","Unknown",0,false,false,"","Yes"]
 ];
 
 // Guest fields: [id, name, group, side, rsvp, count, thankYou, rehearsal, notes]
 let guests = [];
 const G = {ID:0,NAME:1,GROUP:2,SIDE:3,RSVP:4,COUNT:5,TY:6,REH:7,NOTES:8,INV:9};
 
-const DATA_VER = 3;
+const DATA_VER = 4;
 async function loadGuests() {
   const saved = await window.fbGet('guests');
-  if (saved && Array.isArray(saved)) { guests = saved; }
-  else { guests = GUEST_DEFAULTS.map(r=>[...r]); }
+  const savedVer = await window.fbGet('guestVer');
+  // If version mismatch or no data, load from corrected defaults and save to Firebase
+  if (!saved || !Array.isArray(saved) || savedVer != DATA_VER) {
+    guests = GUEST_DEFAULTS.map(r=>[...r]);
+    await window.fbSet('guests', guests);
+    await window.fbSet('guestVer', DATA_VER);
+  } else {
+    guests = saved;
+  }
 }
 async function saveGuests() {
   await window.fbSet('guests', guests);
+  await window.fbSet('guestVer', DATA_VER);
   updateDashboard();
   if(typeof renderFinanceSummary==='function') renderFinanceSummary();
 }
