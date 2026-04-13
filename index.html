@@ -1646,15 +1646,37 @@ const GUEST_DEFAULTS = [
 let guests = [];
 const G = {ID:0,NAME:1,GROUP:2,SIDE:3,RSVP:4,COUNT:5,TY:6,REH:7,NOTES:8,INV:9};
 
-const DATA_VER = 4;
+const DATA_VER = 5;
 
-// Convert guest array to object for Firestore (no nested arrays allowed)
+// Convert guest array to plain object for Firestore (no nested arrays allowed)
 function guestToObj(g) {
-  return {id:g[0],name:g[1],group:g[2],side:g[3],rsvp:g[4],count:g[5],ty:g[6],reh:g[7],notes:g[8],inv:g[9]||'Yes'};
+  return {
+    id:    g[0] ?? 0,
+    name:  String(g[1] ?? ''),
+    group: String(g[2] ?? ''),
+    side:  String(g[3] ?? ''),
+    rsvp:  String(g[4] ?? 'Unknown'),
+    count: Number(g[5] ?? 0),
+    ty:    Boolean(g[6]),
+    reh:   Boolean(g[7]),
+    notes: String(g[8] ?? ''),
+    inv:   String(g[9] ?? 'Yes')
+  };
 }
 // Convert object back to array for app use
 function objToGuest(o) {
-  return [o.id,o.name,o.group,o.side,o.rsvp,o.count,o.ty,o.reh,o.notes,o.inv||'Yes'];
+  return [
+    o.id ?? 0,
+    o.name ?? '',
+    o.group ?? '',
+    o.side ?? '',
+    o.rsvp ?? 'Unknown',
+    o.count ?? 0,
+    o.ty ?? false,
+    o.reh ?? false,
+    o.notes ?? '',
+    o.inv ?? 'Yes'
+  ];
 }
 
 async function loadGuests() {
