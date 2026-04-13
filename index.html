@@ -1348,7 +1348,11 @@ async function initApp() {
 // ── REMOTE DATA HANDLER (real-time listener) ──────────────
 // Called when another user saves data — silently updates UI
 function applyRemoteData(d) {
-  if (d.guests)          { guests = d.guests; renderGuests(); updateDashboard(); }
+  if (d.guests && Array.isArray(d.guests)) {
+    // Convert from Firestore objects back to arrays
+    guests = d.guests.map(o => typeof o === 'object' && !Array.isArray(o) ? objToGuest(o) : o);
+    renderGuests(); updateDashboard();
+  }
   if (d.checklist)       { checklistState = d.checklist; renderChecklist(); updateChecklistProgress(); }
   if (d.finance)         { payments = d.finance.payments || payments; finBudget = d.finance.budget || 0; finNotes = d.finance.notes || ''; renderPayments(); }
   if (d.hotel)           { hotelState = d.hotel.tasks || {}; restoreHotelFields(d.hotel); renderHotelTasks(); }
@@ -1643,20 +1647,30 @@ let guests = [];
 const G = {ID:0,NAME:1,GROUP:2,SIDE:3,RSVP:4,COUNT:5,TY:6,REH:7,NOTES:8,INV:9};
 
 const DATA_VER = 4;
+
+// Convert guest array to object for Firestore (no nested arrays allowed)
+function guestToObj(g) {
+  return {id:g[0],name:g[1],group:g[2],side:g[3],rsvp:g[4],count:g[5],ty:g[6],reh:g[7],notes:g[8],inv:g[9]||'Yes'};
+}
+// Convert object back to array for app use
+function objToGuest(o) {
+  return [o.id,o.name,o.group,o.side,o.rsvp,o.count,o.ty,o.reh,o.notes,o.inv||'Yes'];
+}
+
 async function loadGuests() {
   const saved = await window.fbGet('guests');
   const savedVer = await window.fbGet('guestVer');
-  // If version mismatch or no data, load from corrected defaults and save to Firebase
   if (!saved || !Array.isArray(saved) || savedVer != DATA_VER) {
     guests = GUEST_DEFAULTS.map(r=>[...r]);
-    await window.fbSet('guests', guests);
+    await window.fbSet('guests', guests.map(guestToObj));
     await window.fbSet('guestVer', DATA_VER);
   } else {
-    guests = saved;
+    // saved is array of objects — convert back to arrays
+    guests = saved.map(objToGuest);
   }
 }
 async function saveGuests() {
-  await window.fbSet('guests', guests);
+  await window.fbSet('guests', guests.map(guestToObj));
   await window.fbSet('guestVer', DATA_VER);
   updateDashboard();
   if(typeof renderFinanceSummary==='function') renderFinanceSummary();
